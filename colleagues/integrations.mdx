@@ -1,0 +1,50 @@
+---
+title: Integrations on a colleague
+description: Choose which connected tools the colleague can use, and how much trust each one gets.
+icon: plug
+---
+
+Connecting a tool to your team and giving a colleague access to it are two different steps. The first happens once on the [Tools](/integrations/overview) page. The second happens when you build or edit a colleague.
+
+## Picking from your connections
+
+When you're in the colleague's **Integrations** section, you'll see every connection your team has — Gmail, Slack, Sheets, Salesforce, whatever you've connected. Toggle on the ones this colleague should have access to.
+
+You don't toggle on everything by default. Sofia probably needs Gmail, Salesforce, and Slack. She probably doesn't need GitHub. Less is more — a colleague with focused tools makes better choices about which one to use.
+
+## Setting trust per tool
+
+Each tool a colleague can use has a trust level:
+
+- **Auto** — the colleague runs it without asking. Use for read-only operations and things you trust them to do unsupervised.
+- **Review** — the colleague pauses and asks before running. Use for things that mutate the world: sending email, posting to Slack, updating a CRM record, opening a ticket.
+- **Block** — the colleague doesn't see the tool at all. Use to remove temptation when you've turned a tool on but don't want a particular colleague using it.
+
+Default settings are sensible. Reading is Auto, writing is Review. You can change it per colleague. A trusted skill that you've used a hundred times might graduate from Review to Auto.
+
+## When a tool is on Review
+
+In a session, when the colleague hits a Review-gated tool, they pause and show you what they're about to do — what tool, what input, what's about to happen. Three buttons:
+
+- **Approve** — runs it.
+- **Approve with note** — runs it, and you leave a comment they read for context.
+- **Skip** — they don't run this one and try a different approach.
+
+You can also tell them to always allow this kind of call from now on. Useful when you realise a tool you'd thought needed review actually doesn't.
+
+## Personal vs shared connections
+
+A connection that's marked Personal (only you) only works when you're the one chatting with the colleague. If a teammate uses the colleague, they'll need their own connection to that tool.
+
+Shared connections work for everyone on the team — but each user authenticates with their own account. Alice's Gmail and Bob's Gmail are both used through the same shared connection, but Alice never sees Bob's emails. See [team vs personal](/integrations/team-vs-personal).
+
+## Where to next
+
+<CardGroup cols={2}>
+  <Card title="Connect a tool" icon="plug" href="/integrations/overview">
+    Add a new integration to your team.
+  </Card>
+  <Card title="Concepts: Integrations" icon="lightbulb" href="/concepts/integrations">
+    Big picture of how connections work.
+  </Card>
+</CardGroup>
