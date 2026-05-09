@@ -1,0 +1,69 @@
+---
+title: Using skills
+description: Skills are pre-packaged workflows your colleague can run on demand. Use them when a task is repeatable and you want consistent quality.
+icon: blocks
+---
+
+A skill is a reusable workflow attached to a colleague. Once a skill exists, the colleague runs it the same way every time — same steps, same checks, same output shape.
+
+Skills are the difference between asking the colleague to do something and asking the colleague to **execute a known-good procedure**.
+
+## When to use one
+
+Reach for a skill when:
+
+- The work is repeatable. You'll do it more than once.
+- The output needs to be consistent. Different people on your team need to get the same shape of result.
+- The procedure has gotten complex. Multiple steps, branching, verification — too much to type into a chat every time.
+- The output is going to a downstream system that expects a certain format.
+
+If you've done a thing in chat three times and it came out roughly right, that's a candidate for a skill.
+
+## Asking the colleague to run a skill
+
+Two ways:
+
+**Just describe the task.** If a relevant skill is attached, the colleague will pick it up automatically.
+
+> Sofia, run a pipeline review for me.
+
+If she has a `pipeline-review` skill, she runs it.
+
+**Use the slash command.** Skills surface as slash commands in the chat. Type `/` and you'll see the list. Pick the one you want, optionally add details.
+
+> /pipeline-review focus on West Coast accounts only
+
+Either way works. Slash is faster when you already know the skill name.
+
+## Asking the colleague to add new skills
+
+Colleagues can also discover and add skills themselves. If you're working with one and you mention a workflow that's clearly out there as a packaged skill (transcribing meetings, generating decks, doing market research), tell them to find it.
+
+> Find a meeting transcription skill on GitHub and add it to yourself.
+
+> Look for a research skill that's good at competitive intel and pull it in.
+
+The colleague searches, evaluates, and pulls the skill into their team library. You'll see it confirmed in the chat. Next session, the new skill is available.
+
+## When a skill goes wrong
+
+Skills aren't magic. Sometimes a skill produces bad output — the source data was unusual, the instructions had a gap, the API returned something unexpected.
+
+Tell the colleague what went wrong.
+
+> The brief was too long. Always keep it under 600 words.
+
+> When the customer name has multiple words, use the first word only in the email subject.
+
+The colleague updates the skill so the same mistake doesn't happen again. This is how skills get sharper over time. See [skill creation and robustness](/techniques/skill-creation) for the technique in depth.
+
+## Where to next
+
+<CardGroup cols={2}>
+  <Card title="Build robust skills" icon="wand-sparkles" href="/techniques/skill-creation">
+    Make skills that handle edge cases and preferences.
+  </Card>
+  <Card title="Skills on a colleague" icon="blocks" href="/colleagues/skills">
+    Importing, sharing, managing the team library.
+  </Card>
+</CardGroup>
