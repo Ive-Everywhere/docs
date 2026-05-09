@@ -1,0 +1,59 @@
+---
+title: Skills
+description: Skills are reusable workflows your colleague can run. Import from GitHub, pull from your team library, or have the colleague find them on its own.
+icon: blocks
+---
+
+A skill is a packaged workflow attached to a colleague. Once a skill is in place, the colleague runs it the same way every time — the steps, the checks, the output shape, all consistent.
+
+You can add skills three ways.
+
+## From a GitHub URL
+
+If you've got a skill repo or a teammate has shared one, paste the GitHub URL into the colleague's skills section. Eluu pulls it in, parses it, and attaches it to the colleague.
+
+A common pattern is teams maintaining a private GitHub repo of their company's skills — `acme-skills/morning-brief`, `acme-skills/customer-health-check`. Pull whichever one you need into whichever colleague should have it.
+
+## From your team library
+
+Skills can be promoted to your team's shared library. Once they're there, anyone building a colleague can check the box to attach them. Useful for company-standard workflows.
+
+## Have the colleague add it themselves
+
+You don't have to manage skills by hand. If you're working with a colleague and the right move is to add a skill, just ask:
+
+> Find a meeting transcription skill on GitHub and add it to yourself.
+
+> Look for a research skill that's good for competitive analysis. Add it to your library.
+
+The colleague searches, evaluates, and pulls the skill in. You'll see what they imported. The skill is available immediately.
+
+## How a colleague uses a skill
+
+Once attached, a skill is available in two ways:
+
+- **Implicitly** — when you describe a task that matches a skill's purpose, the colleague runs the skill without you naming it.
+- **Explicitly** — type `/` in chat and pick the skill by name.
+
+The colleague's skill matters more for some things than others. A skill called `pipeline-review` is going to do a much better job than a generic ask, because the skill captures the steps you've decided are right.
+
+## Improving a skill
+
+Skills aren't frozen. When one produces something off, tell the colleague:
+
+> The brief was too long. Cap it at 600 words.
+
+> When the customer name has multiple words, only use the first word as the email greeting.
+
+The colleague updates the skill so the same mistake doesn't repeat. Over time, your skills get tighter and more reliable. See [skill creation](/techniques/skill-creation) for the technique behind making skills robust.
+
+## Where to next
+
+<CardGroup cols={2}>
+  <Card title="Skill creation in depth" icon="wand-sparkles" href="/techniques/skill-creation">
+    Make skills that handle edge cases.
+  </Card>
+  <Card title="Verification loops" icon="shield-check" href="/techniques/verification-loops">
+    Build trust into every skill run.
+  </Card>
+</CardGroup>
