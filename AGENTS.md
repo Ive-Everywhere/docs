@@ -90,6 +90,12 @@ icon: <lucide icon name>
 
 Don't reference internal facts in the description. Make it readable on a search results page.
 
+## Frontmatter length rules
+
+- **`title`** — ≤30 characters. Single noun phrase. Sentence case. No em-dash explanations, no "in Eluu", no qualifiers. Bad: `Sessions — chats and parallel work in Eluu`. Good: `Sessions`.
+- **`description`** — ≤80 characters, target 60-75. One line. The description is the subhead, not a sentence about the page. Bad: `A colleague is an AI teammate in Eluu that owns one business function — like sales or support — and runs work across every tool you've connected.` (147 chars). Good: `An AI teammate that owns a business function and runs work across your tools.` (78 chars).
+- Both rules exist because Mintlify wraps both fields in the page header. Anything longer than the limits wraps to a second line and looks bad.
+
 ## When unsure
 
 The authoritative source is `product/documentation/facts-ledger.md` for behaviour, and `strategy/positioning-and-pricing.md` for positioning. If a fact isn't there, ask Krishna. Don't invent.
