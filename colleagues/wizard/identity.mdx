@@ -20,7 +20,7 @@ From the sidebar, click **Colleagues**, then **Add colleague**. The wizard opens
 
 The colleague's profile picture. Click **Upload** to use your own image, or pick from the avatar gallery (cartoon avatars generated server-side).
 
-Recommended: a square image, at least 256×256 px. Larger images are auto-resized.
+Recommended: a square image, at least 256×256 px. Eluu auto-resizes larger images.
 
 ### Name
 
@@ -83,21 +83,21 @@ Optional. The colour bar that runs across the top of the colleague's card. Pick 
 
 ## Save and move on
 
-When all required fields are valid, click **Next: Personality**. The colleague is created in draft state — if you back out before finishing the rest of the wizard, you can come back and pick up where you left off.
+When all required fields are valid, click **Next: Personality**. Eluu creates the colleague in draft state — if you back out before finishing the rest of the wizard, you can come back and pick up where you left off.
 
 <Tip>
-The wizard's working state isn't persisted across browser tab switches by design. Finish a step, click **Next**, and your progress is saved.
+The wizard doesn't persist its working state across browser tab switches by design. Finish a step, click **Next**, and Eluu saves your progress.
 </Tip>
 
 ## Validation
 
-The Identity step has these validations, applied on blur and on **Next**:
+The Identity step validates these fields on blur and when you click **Next**:
 
 - **Name:** required, 1-100 characters.
 - **Role:** required, 40-180 characters.
 - **Description:** optional, max 500 characters.
 
-Errors show inline below the field. **Next** is disabled until validation passes.
+Errors show inline below the field. **Next** stays disabled until every field validates.
 
 ## Switching Personal ↔ Shared
 
@@ -113,7 +113,7 @@ In the wizard (creation mode), toggling visibility is silent. In edit mode, it s
 > **Make colleague personal?**
 > Only you will be able to access this colleague, its tasks, and workspace.
 
-The visibility toggle is only visible to the creator. Other team members (even admins) can't change it.
+Only the creator sees the visibility toggle. Other team members — admins included — can't change it.
 
 ## What happens next
 

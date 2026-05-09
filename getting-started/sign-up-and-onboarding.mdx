@@ -14,7 +14,7 @@ Open [app.eluu.ai](https://app.eluu.ai) and pick a sign-in method:
 - **Microsoft** — same idea, for Microsoft accounts.
 - **Email and password** — standard flow.
 
-If you've been invited to a team via email, click the link in the invitation. We'll handle that flow below.
+If you've been invited to a team via email, click the link in the invitation. That flow is covered below.
 
 ## Step 2 — Onboarding
 
@@ -35,7 +35,7 @@ Click **Continue**. There's no Back button — once you've answered, you move on
 
 ### Screen 2 — Invite decision (only if you've been invited)
 
-If you have a pending invitation to someone else's team, you'll see a card with the team's name, the inviter's name, and the role they've assigned you. Two buttons:
+If you have a pending invitation to someone else's team, you'll see a card with the team's name, the inviter's name, and your assigned role. It has two buttons:
 
 - **Accept & Join** — drops you into the team. Onboarding ends here.
 - **Skip** — continues to the carousel and creates a brand-new team for you.
@@ -65,7 +65,7 @@ After **Get started**, you arrive in a chat with your default colleague. From he
 
 ## What if I close the tab mid-onboarding?
 
-Closing the tab before pressing **Get started** is fine. When you log back in, you'll resume where you stopped. Eluu remembers what you completed and what's still pending.
+Closing the tab before clicking **Get started** is fine. When you sign back in, you'll resume where you stopped. Eluu remembers what you completed and what's still pending.
 
 If you've completed onboarding once, the flow won't trigger again. The sidebar will show a "Complete onboarding" prompt if you backed out before the carousel finished.
 
@@ -79,7 +79,7 @@ Standard three-screen onboarding above.
 
 ### You're brand new and clicked an invite link
 
-The invite link goes to `/invite/{token}`. Eluu validates the invitation (rejecting expired or wrong-account invitations) and routes you to onboarding with the invite attached. After your profile screen you'll skip directly into the invited team.
+The invite link goes to `/invite/{token}`. Eluu validates the invitation, rejects expired or wrong-account ones, and routes you to onboarding with the invite attached. After your profile screen, you'll skip directly into the invited team.
 
 ### You already have an Eluu account and clicked an invite link
 
@@ -109,7 +109,7 @@ A single backend call wires up everything when you finish the carousel. It:
 6. Activates your trial credits.
 7. Starts your first session.
 
-If any of these fail, the system retries. If retries fail, you'll see an error toast and a path to support.
+If any of these fail, Eluu retries. If retries keep failing, you'll see an error toast and a path to support.
 
 ## Where to next
 
