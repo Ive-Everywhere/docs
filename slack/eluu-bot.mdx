@@ -1,0 +1,65 @@
+---
+title: "@Eluu — the platform bot"
+description: Install the Eluu app once and mention `@Eluu` in any Slack channel. The right colleague replies based on the channel mapping.
+icon: bot
+---
+
+The fastest way to get an Eluu colleague into Slack.
+
+## Install
+
+<Steps>
+  <Step title="Open Slack settings in Eluu">
+    In the app, click the Slack icon in the bottom-left of the sidebar.
+  </Step>
+  <Step title="Pick @Eluu">
+    Choose **Connect @Eluu** from the options.
+  </Step>
+  <Step title="Authorise in your Slack workspace">
+    You'll be redirected to Slack. Pick the workspace, review the permissions, and click **Allow**.
+  </Step>
+  <Step title="You're back in Eluu">
+    The connection shows up. You can now map colleagues to channels.
+  </Step>
+</Steps>
+
+## Map a colleague to a channel
+
+Once the bot is in your workspace, you decide which colleague answers in which channel.
+
+In the Slack settings, open the connection you just set up. You'll see your team's channels. For each channel where you want a colleague to respond, pick which colleague.
+
+A few useful patterns:
+
+- One colleague in each business-function channel — Sofia in `#sales-ops`, Max in `#customer-success`.
+- A general-purpose colleague in `#ai-help` for anyone-can-ask questions.
+- No mapping in channels you'd rather keep human-only.
+
+If a channel has no mapping, `@Eluu` won't respond there.
+
+## Talk to it
+
+Once mapped, mention `@Eluu` in any of those channels.
+
+> @Eluu summarise the last 50 messages in this channel and pull out action items.
+
+> @Eluu look at our pipeline this morning and post a quick health check here.
+
+> @Eluu, draft a follow-up for the customer we discussed yesterday.
+
+The colleague mapped to that channel does the work. The reply lands in the same thread.
+
+## DMs work too
+
+You can DM `@Eluu` directly. By default, the colleague who handles DMs is the one you've set as your default — usually the colleague Eluu created for you on signup.
+
+## Where to next
+
+<CardGroup cols={2}>
+  <Card title="Channel restrictions" icon="lock" href="/slack/channel-restrictions">
+    Control where the bot is allowed to respond.
+  </Card>
+  <Card title="User mapping" icon="user" href="/slack/user-mapping">
+    Connect Slack users to their Eluu accounts.
+  </Card>
+</CardGroup>
