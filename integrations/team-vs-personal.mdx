@@ -26,7 +26,7 @@ Pick Shared when:
 - Multiple people on the team will use the colleague that depends on this tool.
 - Different people authenticating with their own accounts is the right pattern.
 
-Important point: Shared doesn't mean shared inboxes. Each user authenticates with their own provider account. Alice and Bob both use a Shared Gmail integration, but Alice never sees Bob's emails — they each get their own data when they ask the colleague.
+Important point: Shared doesn't mean shared inboxes. Each user authenticates with their own provider account. Alice and Bob both use a Shared Gmail integration. But Alice never sees Bob's emails — they each get their own data when they ask the colleague.
 
 The "shared" part is the configuration of the connection itself: that it exists, that this colleague uses it, what tools it exposes. The data behind it stays per-user.
 
@@ -46,7 +46,7 @@ If the original creator leaves the team, you may need to recreate the connection
 
 ## Who can pause a connection
 
-You can pause a connection without deleting it — useful when you want to stop a colleague from using a tool temporarily without losing the OAuth tokens. Pausing is non-destructive: the token stays valid, and you can resume any time.
+You can pause a connection without deleting it — useful when you want to stop a colleague from using a tool temporarily without losing your sign-in. Pausing is non-destructive: the connection stays valid, and you can resume any time.
 
 Pausing follows the same permissions as configuring — the connection's owner can do it.
 
