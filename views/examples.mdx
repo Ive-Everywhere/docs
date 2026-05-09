@@ -1,0 +1,56 @@
+---
+title: View examples
+description: Real-world dashboards teams have asked their colleagues to build.
+icon: grid-2x2
+---
+
+Some patterns that work. None of these are templates you click — you describe what you want and your colleague builds something tailored to your data.
+
+## Sales pipeline overview
+
+> Sofia, build me a dashboard of my open Salesforce opportunities. KPIs at the top: total pipeline, weighted forecast, deals at risk. A bar chart of pipeline by stage. A table of every open deal with owner, amount, stage, last activity. On each row, a "Send follow-up" button.
+
+The result is a view you can open every morning. The numbers update from Salesforce, the table sorts how you want, and a click on a row drafts an email — saving you the manual lookup.
+
+## Customer health
+
+> Max, set up a customer health view. KPI tiles for active accounts, accounts at risk, accounts churned this quarter. An alert at the top if any account hasn't been contacted in 30 days. A table of accounts ranked by risk score. Each row has buttons for "Open ticket" and "Draft check-in email".
+
+When something needs your attention, the alert at the top tells you. The table gives you the reason. The buttons make follow-up one click.
+
+## Weekly engineering on-call digest
+
+> Pepeter, build a view I can save and reopen weekly. Top: KPIs for incidents this week, average time-to-resolution, open Linear tickets. Below: a chart of incidents per day. Below that: a table of every incident this week with severity, owner, status. Per row: a "Reopen ticket" button.
+
+This view is also a [job](/concepts/jobs) — your colleague refreshes it every Monday at 9am and posts a summary in #eng-leads on Slack.
+
+## Marketing intelligence
+
+> Aria, give me a view tracking our top five competitors. KPI tiles for new product launches this month, blog posts published, hiring signals. A donut chart showing share of voice across the five. A table of every recent change at each, with date, source link, and a "Draft response" button that creates a Slack thread.
+
+The colleague keeps this fresh. When a competitor launches something, you see it. The "draft response" button kicks off a sub-conversation about how to react.
+
+## Founder daily brief
+
+> Larry, build me a personal dashboard. Top: KPIs for cash, runway, MRR, active users. Below: a list of every action I owe someone (from my email and Slack). Below that: open priorities I told you to track. Each priority has a "Mark done" button.
+
+This is the founder's morning view — refreshed by an 8am job, opened first thing every day.
+
+## Why these aren't templates
+
+Two reasons.
+
+First, your data is different from someone else's. The right view of your sales pipeline depends on which Salesforce fields you actually use, which stages matter, which buttons your team would actually click. A template would be wrong in the wrong places.
+
+Second, the colleague learns. The first version of your sales view is fine. After two weeks of feedback — "make this column wider", "split the chart by region", "add an alert for stalled deals" — it's tailored to your team. A template would just freeze the bad first version.
+
+## Where to next
+
+<CardGroup cols={2}>
+  <Card title="Build your own" icon="layout-dashboard" href="/views/overview">
+    The big-picture how-to.
+  </Card>
+  <Card title="Schedule a refresh" icon="calendar-clock" href="/concepts/jobs">
+    Refresh your views on a schedule.
+  </Card>
+</CardGroup>
