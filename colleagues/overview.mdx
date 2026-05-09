@@ -1,115 +1,69 @@
 ---
-title: Colleagues
-description: What an Eluu colleague is, how to scope one to a business role, how many you should build, and how the list page and creation wizard work.
+title: Building a colleague
+description: Walk through what you set when you create or edit a colleague — name, role, skills, integrations, memory.
 icon: users-round
 ---
 
-A **colleague** is an Eluu teammate you build. Each colleague owns one business function or role and replaces what you'd otherwise buy as a focused AI SaaS product. It has a name, a role, a personality, a set of abilities, and a private workspace that persists across every conversation.
+Building a colleague takes a few minutes. Click **Add colleague** in the app and fill in five things. You can change any of them later.
 
-This page is the overview. The five-step wizard for creating one is in [Create a colleague](/colleagues/wizard/identity).
+## Identity
 
-## One colleague = one role
+Give them a name and a role. The role is the most important field — it tells the colleague (and you) what they own.
 
-The mental model that makes Eluu work: **a colleague maps to a business role, not a task type**. Don't build a "data colleague" or a "writing colleague" — those are too vague. Build a "sales operations colleague" or a "customer success colleague".
+Don't write `sales` as the role. Write something a person could read and know what to do:
 
-How tightly you scope a role depends on the size of the work:
+> A senior sales operations colleague who runs morning pipeline reviews, drafts outreach for active deals, and flags customers we haven't talked to in two weeks.
 
-| Org size | What one colleague typically owns |
-|---|---|
-| Personal use or 1-person team | An entire function — one "sales colleague" does prospecting, outreach, and pipeline. |
-| Startup (5-25 people) | One function each — sales, customer success, ops, marketing, research. Three to five colleagues total. |
-| Scaling (25-100) | Sub-functions — meeting intelligence, renewals, inbound triage as separate colleagues. |
-| Enterprise | Dozens of colleagues running real workloads in parallel, on schedules, with verification loops. |
+The more specific you are, the better they perform. A short role gives you a vague colleague.
 
-You add colleagues as you grow. The platform stays the same.
+You'll also pick whether the colleague is **personal** (just you) or **shared** (your whole team). Default is personal. You can flip it later, but flipping a colleague to shared makes their full history visible to everyone.
 
-## What a colleague is
+## Personality
 
-A colleague has five layers, configured in five wizard steps:
+How they talk and how they refuse. Cover:
 
-| Step | What you set |
-|---|---|
-| 1. Identity | Name, role, description, avatar, cover, visibility (Personal or Shared) |
-| 2. Personality | Voice, tone, refusals, default workflow |
-| 3. Abilities | Model, speed tier, skills, custom playbooks, context files |
-| 4. Behaviour | Coding/output rules, communication rules, safety rules, custom rules |
-| 5. Integration | Which integrations the colleague uses, and the permission for each tool |
+- Voice and tone — formal, casual, dry, warm.
+- How they should structure responses.
+- What they should never do — `never send email without showing me first`.
+- Their default workflow when you don't specify one.
 
-Once you save it, you can reach the colleague from every surface — web app, Slack, browser extension — and it remembers everything across sessions.
+Keep it human-readable. The colleague reads it as instructions every time.
 
-## How many colleagues you should have
+## Skills
 
-Most teams start with three to five colleagues, each focused on a different role. A useful pattern:
+Pre-packaged workflows. You can:
 
-- **A general assistant** — the default colleague Eluu created for you on sign-up.
-- **One per business function** — sales, customer success, engineering on-call, marketing.
-- **One per recurring deliverable** — a "weekly briefing" colleague, a "morning digest" colleague.
+- Pull skills in from GitHub by URL.
+- Pick from your team's skill library.
+- Or just ask the colleague to find and add one themselves.
 
-Building more colleagues is cheap. They're configuration. **Don't pile every responsibility on one colleague.** A colleague that does five unrelated jobs is worse than five colleagues each doing one. Sharper roles produce sharper results — and the workspace memory of a focused colleague compounds faster.
+See [skills on a colleague](/colleagues/skills) for the full picture.
 
-If a colleague's role description fits in one sentence, the role is well-scoped. If it needs three sentences with "and" between them, split it.
+## Custom commands
 
-## The list page
+Slash commands specific to this colleague. If Sofia has a `/morning-brief` command, typing it in any chat with her runs that workflow. Useful for the things you ask for repeatedly.
 
-Open **Colleagues** in the sidebar to see all colleagues your team has built.
+See [commands](/colleagues/commands).
 
-- Two filter tabs: **Mine** and **Shared**. There's no "All" tab.
-- **Mine** shows colleagues you've built as personal (only you can use them).
-- **Shared** shows colleagues anyone on your team can use.
-- The **Add colleague** button opens the [creation wizard](/colleagues/wizard/identity).
+## Integrations
 
-Each card shows the colleague's avatar, name, role, description, and a Personal/Shared chip.
+Toggle which connected tools the colleague can use, and set the trust level for each one (auto, review, block). See [integrations on a colleague](/colleagues/integrations).
 
-## Personal vs Shared
+## Memory
 
-Visibility is a single setting on the colleague's Identity step.
+You don't configure memory directly when building a colleague — it builds on its own as you work together. But the colleague's [hard disk](/concepts/hard-disk) starts empty, and the more you talk to them, the more they remember. See [memory](/colleagues/memory) for how to nudge what gets remembered.
 
-- **Personal** — only you see the colleague, its sessions, its workspace, and its files.
-- **Shared** — your whole team uses the colleague. Conversation history, files, and workspace are visible to all members.
+## How many colleagues to build
 
-Only the creator of a colleague can change its visibility. Other team members (even admins) can't toggle it. See [Personal vs Shared](/concepts/personal-vs-shared) for the full model.
-
-## What you can use to extend a colleague
-
-Three extension points:
-
-- **Skills** — packaged, reusable workflows. Import from a GitHub URL or pick from your team library. Use these when you have a multi-step procedure you'll repeat. See [Skills](/skills/overview).
-- **Custom playbooks** — slash commands defined per colleague. Use these for prompts you re-run frequently. See [Slash commands](/chat/slash-commands).
-- **Context files** — files the colleague always has loaded in its workspace. Useful for style guides, product docs, account lists.
-
-## Permissions on a colleague
-
-Members on your team can use any **Shared** colleague. Whether they can edit it is a separate question:
-
-- The colleague's **creator** can always edit and delete it.
-- Owners and admins can manage colleagues if `canManageColleagues` is enabled (default for both roles).
-- Plain members cannot create, edit, or delete colleagues.
-
-Members can still chat with shared colleagues. They can't change the configuration.
-
-## Memory — the moat
-
-Each colleague has its own workspace: a Git-backed file system that persists forever. Across sessions, your colleague writes notes, builds files, accumulates context. After a few weeks of use:
-
-- It knows your team's projects and how you talk about them.
-- It knows your data shape and where things live.
-- It knows your tone and style preferences.
-
-You can't export this. Switching products means starting from zero. This is the most underrated feature of Eluu — and the reason teams that adopt rarely leave.
+Most teams settle on 3-5 colleagues, each owning one role. You add more as you grow into bigger workloads. Don't pile every responsibility on one colleague — you'll get sharper output from five focused colleagues than one general one.
 
 ## Where to next
 
 <CardGroup cols={2}>
-  <Card title="Step 1 — Identity" icon="user" href="/colleagues/wizard/identity">
-    Start building a colleague. Name, role, description, visibility.
+  <Card title="Add skills" icon="blocks" href="/colleagues/skills">
+    Import from GitHub or pull from your library.
   </Card>
-  <Card title="Editing a colleague" icon="pencil" href="/colleagues/editing">
-    Update an existing colleague. The five-step interface is the same.
-  </Card>
-  <Card title="Personal vs Shared" icon="users-round" href="/concepts/personal-vs-shared">
-    The visibility model in depth.
-  </Card>
-  <Card title="The mental model" icon="lightbulb" href="/concepts/mental-model">
-    How colleagues fit with sessions, jobs, views, and files.
+  <Card title="Connect integrations" icon="plug" href="/colleagues/integrations">
+    Choose what tools they can use.
   </Card>
 </CardGroup>
