@@ -1,0 +1,94 @@
+---
+title: Personal vs Shared
+description: How visibility works in Eluu. Two values, applied across colleagues, integrations, and views.
+icon: users-round
+---
+
+Eluu has two visibility values. Not three. The same model applies to colleagues, integrations, and views.
+
+| Visibility | Stored as | Shown as |
+|---|---|---|
+| Personal | `PRIVATE` | Personal |
+| Shared | `TEAM` | Shared |
+
+There is no `PUBLIC` and no "All" filter. The list pages show two tabs: **Mine** and **Shared**.
+
+## What changes per visibility
+
+### Colleagues
+
+| | Personal | Shared |
+|---|---|---|
+| Who sees the colleague | You only | All team members |
+| Who can use it | You only | All team members |
+| Who can edit it | The creator | The creator (other members can't, even admins) |
+| Who can change visibility | The creator only | The creator only |
+| Where workspace data lives | In the colleague's private workspace | In the colleague's workspace, visible to all team members |
+
+Personal colleagues are useful for experiments, single-user workflows, and anything you don't want to broadcast. Shared colleagues are how the team gets value at scale.
+
+### Integrations
+
+Integrations have visibility on the **connection**, not the integration template. When you connect Gmail, you're creating an integration connection that lives at one of two scopes:
+
+| | Personal | Shared |
+|---|---|---|
+| Who sees the connection | You only | All team members |
+| Who can use it | You only | All team members |
+| Who can mutate it | The owner only | The owner only (admins get 403) |
+| Default on new connect | Yes (default) | No |
+
+Per-user OAuth is enforced on shared connections too — when Alice and Bob both use a "Shared Gmail" integration, each connects with their own Google account. They never see each other's emails.
+
+### Views
+
+| | Personal | Shared |
+|---|---|---|
+| Who sees the view | The colleague's owner | All team members (if the colleague is Shared) |
+| Who can refresh / interact | Same as visibility | Same as visibility |
+| Who can delete | The creator and admins | The creator and admins |
+
+A view inherits its visibility from the colleague that created it. If you change a colleague from Shared to Personal, its views follow.
+
+## Switching a colleague between Personal and Shared
+
+Only the creator can flip the toggle, and only on the Identity step of the wizard (or by editing the colleague). The change is immediate, and shows a confirmation dialog because it changes who can see what.
+
+**Personal → Shared:**
+
+> **Make colleague shared?**
+> All tasks, workspace history, and configuration will become visible to your entire team.
+
+**Shared → Personal:**
+
+> **Make colleague personal?**
+> Only you will be able to access this colleague, its tasks, and workspace.
+
+Going Shared → Personal does **not** delete the colleague's history. It just hides it from teammates.
+
+## Switching an integration connection
+
+Switching a connection from Team to Personal shows a pre-flight check that counts how many other people's bindings will be wiped. If non-zero, you confirm a modal before commit.
+
+Switching Personal to Team is silent — you're widening access, not narrowing.
+
+## Filter cascading
+
+When you toggle the **Mine / Shared** filter on Hard Drive or Views, the active colleague filter also resets. The selected colleague might not exist in the new scope.
+
+## What admins and owners see
+
+Admins and owners don't get magic access to other people's Personal items today. The internal API returns a `canAccess` flag for governance, but the current UI hides Personal colleagues that aren't yours regardless of role. That's a deliberate design choice — Personal means Personal.
+
+A future "Other Colleagues" section will surface admin/owner governance views over Personal items, but it's not shipped today.
+
+## Where to next
+
+<CardGroup cols={2}>
+  <Card title="People and roles" icon="shield-check" href="/admin/people-and-roles">
+    What admins and members can do, side by side.
+  </Card>
+  <Card title="Per-user vs shared connections" icon="plug" href="/integrations/personal-vs-shared-connections">
+    The integration version of this in detail.
+  </Card>
+</CardGroup>
