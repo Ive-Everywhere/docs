@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "almond",
+  "theme": "maple",
   "name": "Eluu Docs",
   "description": "Build AI colleagues that run business operations across every tool you use.",
   "colors": {
@@ -38,7 +38,15 @@
       {"group": "Techniques", "icon": "wand-sparkles", "expanded": true, "pages": ["techniques/skill-creation", "techniques/verification-loops", "techniques/sub-agents-for-verification"]}
     ]
   },
-  "logo": {"light": "/logo/light.svg", "dark": "/logo/dark.svg"},
+  "logo": {"light": "/images/logo-light.svg", "dark": "/images/logo-dark.svg"},
   "navbar": {"links": [], "primary": {"type": "button", "label": "Open Eluu", "href": "https://app.eluu.ai"}},
-  "footer": {"socials": {"x": "https://x.com/eluuai", "linkedin": "https://linkedin.com/company/eluu-ai"}}
+  "footer": {
+    "socials": {
+      "x": "https://x.com/eluuai",
+      "linkedin": "https://linkedin.com/company/eluu-ai"
+    }
+  },
+  "fonts": {
+    "family": "Geist"
+  }
 }
