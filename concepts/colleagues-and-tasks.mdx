@@ -1,0 +1,105 @@
+---
+title: Colleagues and tasks
+description: How to think about scoping a colleague to a role. The pattern of one colleague per function, and when to split.
+icon: users
+---
+
+The most important decision when you set up Eluu is how you scope each colleague. Get this right and the platform pays dividends. Get it wrong and you have an expensive chatbot.
+
+## One colleague, one role
+
+A colleague maps to a **business role**, not a task type. The two ways this commonly goes wrong:
+
+- **Role too broad.** A "general assistant" that does sales drafting, customer support, and research. Each domain pollutes the others' memory. Quality drops.
+- **Role too narrow.** A "weekly Tuesday email digest" colleague. The role is a single output, not a function. The workspace doesn't accumulate enough context to be useful.
+
+The sweet spot is a recognizable business role — the kind of thing you might hire a human to do, or buy a SaaS product for.
+
+| Good | Why |
+|---|---|
+| `Senior sales operations colleague managing pipeline reviews and outreach` | A real, hireable role. The workspace memory will accumulate around accounts, opportunities, and win patterns. |
+| `Customer success lead watching for at-risk accounts and drafting renewal outreach` | A real, hireable role. Memory accumulates around accounts, conversations, signals. |
+| `Engineering on-call colleague triaging alerts and drafting incident updates` | A real, hireable role. Memory accumulates around services, recurring issues, and decision history. |
+
+| Avoid | Why |
+|---|---|
+| `Helpful assistant for everything` | Too vague. Memory is shallow because no domain ever gets concentrated context. |
+| `Tuesday standup writer` | Too narrow. The colleague has nothing to memorise between Tuesdays. |
+| `Slack and Gmail bot` | Tool-shaped, not role-shaped. The actual job is unclear. |
+
+## Sizing by org
+
+How tightly you scope a role depends on the breadth of the work and the size of the team.
+
+### Personal use or 1-person team
+
+One colleague usually covers a whole function. A "sales colleague" might own prospecting, outreach, pipeline tracking, and weekly reporting. The same colleague handles every part of the workflow because there's only one person doing it.
+
+Pattern: **one colleague per function you care about.** Three to five colleagues total.
+
+### Startups (5-25 people)
+
+One colleague per business function. Sales, customer success, ops, marketing, research, finance ops. Each colleague focuses on its function but covers the breadth of work within it.
+
+Pattern: **one colleague per function.** Five to ten colleagues total.
+
+### Scaling (25-100 people)
+
+Functions get specialised. Sales splits into "outbound prospecting" and "renewal management". Customer success splits into "onboarding" and "ongoing relationship". Operations becomes "meeting intelligence" + "knowledge management" + "process automation".
+
+Pattern: **one colleague per sub-function.** Ten to thirty colleagues across the org.
+
+### Enterprise
+
+Many colleagues running real workloads in parallel, on schedules, with verification loops. Each colleague is narrow enough to be auditable but deep enough to accumulate years of operational memory.
+
+Pattern: **role-cluster ownership.** Dozens of colleagues across the org.
+
+## How a colleague spends its time
+
+Once a colleague is in production, its work falls into two stages — most teams pass through both.
+
+### Stage 1 — Conversational work
+
+You ask, the colleague does. Research, drafting, organising files, summarising documents, building one-off views. The colleague is reactive — it works when you message it.
+
+This is what most people start with. It's useful from day one, but the colleague's value caps at how often you remember to ask.
+
+### Stage 2 — Automated workflows with verification loops
+
+You convert the most-repeated conversational asks into [scheduled jobs](/jobs/overview). The morning briefing runs at 8am every weekday. The pipeline check runs every two hours. The customer health digest runs every Friday.
+
+With verification loops, the colleague catches its own mistakes. It re-runs the work, compares outputs, flags discrepancies, and only ships when the result passes its own checks.
+
+This is where Eluu changes from "useful" to "operational". The hours saved compound. The memory deepens. Switching off would lose real continuity.
+
+The progression is the goal: start conversational, end automated.
+
+## Splitting and merging
+
+You'll occasionally hit a colleague that's grown too broad. Symptoms:
+
+- Replies feel less sharp than they did.
+- The CLAUDE.md instructions are getting long and contradictory.
+- You're inserting "in the context of X" qualifiers in every message.
+
+Fix: **split it.** Create a second colleague. Copy the relevant sections of the original colleague's instructions into the new one. The two colleagues will start with the same memory but diverge as their workspaces accumulate domain-specific context.
+
+Merging happens less often, but it's the inverse: two colleagues whose roles overlap and confuse teammates can fold into one.
+
+## What to do next
+
+<CardGroup cols={2}>
+  <Card title="Create your first colleague" icon="wand-sparkles" href="/getting-started/create-your-first-colleague">
+    The five-step wizard for putting these patterns into practice.
+  </Card>
+  <Card title="Mental model" icon="lightbulb" href="/concepts/mental-model">
+    How colleagues, sessions, views, and jobs fit together.
+  </Card>
+  <Card title="Personal vs Shared" icon="users-round" href="/concepts/personal-vs-shared">
+    Visibility model for colleagues and what changes when you flip it.
+  </Card>
+  <Card title="Schedule a job" icon="calendar-clock" href="/jobs/creating-a-job">
+    Move from conversational to automated.
+  </Card>
+</CardGroup>
