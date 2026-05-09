@@ -1,0 +1,73 @@
+---
+title: Connecting tools
+description: Connect Eluu to Gmail, Slack, Sheets, Salesforce, and the rest of your stack. Then enable each tool on the colleagues that should use it.
+icon: plug
+---
+
+The **Tools** page in Eluu (the wrench icon at the bottom of the sidebar) lists every integration available. Connect the ones you use, and your colleagues can put them to work.
+
+## What's available
+
+Eluu integrates with the tools most teams run on:
+
+- **Email and chat:** Gmail, Slack, Discord
+- **Docs:** Google Docs, Drive, Sheets, Notion
+- **CRM and sales:** Salesforce, HubSpot
+- **Engineering:** GitHub, Linear
+- **Commerce:** Shopify (multi-store)
+- **Search:** Exa
+- **Analytics:** PostHog
+
+Plus the **Eluu browser extension** for sites that don't have proper APIs.
+
+More are added regularly. If something's missing that has an API, ask in support.
+
+## Connecting
+
+<Steps>
+  <Step title="Open Tools">
+    Click the wrench icon in the bottom-left of the sidebar.
+  </Step>
+  <Step title="Find the tool">
+    Filter by category or search by name.
+  </Step>
+  <Step title="Click Connect">
+    Eluu opens the tool's authentication. For most tools this is OAuth — you sign in to the provider, review the permissions, and approve.
+  </Step>
+  <Step title="Choose the scope">
+    Personal (just you) or Shared (your whole team). Personal is the default. See [team vs personal](/integrations/team-vs-personal) for which to pick.
+  </Step>
+  <Step title="Pick which colleagues to enable">
+    On the setup screen you'll see your colleagues. Toggle on the ones that should have access to this tool.
+  </Step>
+  <Step title="Done">
+    The tool is connected and live. Any colleague you enabled can use it in their next session.
+  </Step>
+</Steps>
+
+## Enabling a tool on a colleague after the fact
+
+If you connect a tool first and add colleagues later, you can enable it on a colleague any time. Edit the colleague, go to **Integrations**, toggle the connection on. Same the other way — if you've turned a colleague's access off, turning it back on takes one click.
+
+## Multi-account integrations
+
+A few integrations support multiple accounts. Shopify is the main one — you can connect five stores to the same Shopify integration, and your colleague can act on any of them.
+
+To add another account, open the integration's manage drawer (click **Manage** on the tool card), find the accounts section, and click **Add another store** (or whatever the integration calls it).
+
+## Reconnecting and disconnecting
+
+OAuth tokens occasionally expire or get revoked. When that happens, the tool shows a `Needs reauth` chip. Click into it and re-run the OAuth flow. Anything that was waiting on the tool resumes once it's reconnected.
+
+To disconnect entirely, open the integration's manage drawer and click **Disconnect**. Any colleague using the tool will lose access immediately.
+
+## Where to next
+
+<CardGroup cols={2}>
+  <Card title="Personal vs shared" icon="users" href="/integrations/team-vs-personal">
+    Who sees what when you connect a tool.
+  </Card>
+  <Card title="Tools on a colleague" icon="plug" href="/colleagues/integrations">
+    Per-colleague configuration.
+  </Card>
+</CardGroup>
