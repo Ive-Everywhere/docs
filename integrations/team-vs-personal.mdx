@@ -1,0 +1,62 @@
+---
+title: Personal vs shared connections
+description: When you connect a tool to Eluu, it's either yours alone or shared with your whole team. Here's how to think about which to pick.
+icon: users
+---
+
+Every integration connection is either Personal (just you) or Shared (your whole team). The default for new connections is Personal.
+
+The choice affects two things: who can see the connection, and who can use it.
+
+## When to keep it Personal
+
+Pick Personal when:
+
+- The data behind the tool is yours, not the team's. Your personal Gmail. Your personal Notion.
+- You're testing an integration before rolling it out broadly.
+- You don't want the access tied to your account to be available to teammates if you leave.
+
+A Personal connection only works for you. If a teammate uses a colleague that has this tool enabled, they'll get a `Connect your account` prompt and have to set up their own.
+
+## When to make it Shared
+
+Pick Shared when:
+
+- The tool represents company data — the team's CRM, the shared Drive, the company Salesforce.
+- Multiple people on the team will use the colleague that depends on this tool.
+- Different people authenticating with their own accounts is the right pattern.
+
+Important point: Shared doesn't mean shared inboxes. Each user authenticates with their own provider account. Alice and Bob both use a Shared Gmail integration, but Alice never sees Bob's emails — they each get their own data when they ask the colleague.
+
+The "shared" part is the configuration of the connection itself: that it exists, that this colleague uses it, what tools it exposes. The data behind it stays per-user.
+
+## Switching between Personal and Shared
+
+You can flip a connection from one to the other from the Tools page. Click into the integration, then **Configure**.
+
+**Personal → Shared** is straightforward. You're widening access. Teammates start seeing the connection on their next session.
+
+**Shared → Personal** is more careful. Eluu shows you a confirmation if there are colleagues or teammates whose work depends on the connection — flipping it would orphan their access. You confirm, those bindings get cleaned up, and the connection becomes yours.
+
+## Who can change a connection
+
+Only the person who created the connection can change it (rename it, change scope, disconnect). Admins and owners can see Shared connections but can't mutate someone else's. This stops accidental disruption when a teammate's connection is in use.
+
+If the original creator leaves the team, you may need to recreate the connection. Reach out to support if you hit this.
+
+## Who can pause a connection
+
+A connection can be paused without deleting it — useful if you want to stop a colleague from using a tool temporarily without losing the OAuth tokens. Pausing is non-destructive: nothing is deleted, the token stays valid, you can resume any time.
+
+Pausing follows the same permissions as configuring — the connection's owner can do it.
+
+## Where to next
+
+<CardGroup cols={2}>
+  <Card title="Connecting tools" icon="plug" href="/integrations/overview">
+    The bigger picture of how connections work.
+  </Card>
+  <Card title="User mapping in Slack" icon="user" href="/slack/user-mapping">
+    Why per-user identity matters for Slack-driven sessions.
+  </Card>
+</CardGroup>
