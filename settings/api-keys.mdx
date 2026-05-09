@@ -24,13 +24,13 @@ Two kinds of keys go here.
 
 **Anthropic / Claude key.** Eluu's primary model is Claude. If you have a Claude API key, paste it. Eluu uses your key for Claude calls; the cost shows up on your Anthropic bill instead of Eluu's.
 
-You can also connect a Claude OAuth account (the same login Anthropic offers Pro users). That uses your subscription rather than usage-based billing.
+You can also connect a Claude OAuth account (the same sign-in Anthropic offers Pro users). That uses your subscription rather than usage-based billing.
 
 **Other provider keys.** OpenAI, Google Gemini, DeepSeek, Z-AI, Moonshot, xAI. Paste each in the corresponding field.
 
 ## How keys are stored
 
-Every key is encrypted at rest. They're never visible after you save — if you need to update one, paste the new one and save again. There's no way to view the old one back.
+Eluu encrypts every key at rest. You can't view a key after saving it — if you need to update one, paste the new one and save again. There's no way to view the old one back.
 
 The encryption keys themselves rotate periodically. If you need to verify or rotate your own keys (after a security event, for example), revoke them on the provider side and paste fresh ones here.
 
