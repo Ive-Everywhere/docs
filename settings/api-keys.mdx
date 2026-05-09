@@ -1,0 +1,54 @@
+---
+title: API keys
+description: Bring your own LLM provider keys to control cost or use a specific provider. Optional — Eluu includes credits on every plan.
+icon: key
+---
+
+Every Eluu plan includes credits — you don't need any keys to get started. But some teams prefer to bring their own keys, either to control cost directly or to use a specific provider.
+
+This page is in **Settings → API keys**.
+
+## When to bring your own keys
+
+Three reasons teams do this:
+
+- **Cost.** If your team has volume discounts with Anthropic, OpenAI, or another provider, using your own key lets you keep that pricing.
+- **Provider preference.** Eluu uses Claude by default. If you want a different model — OpenAI, Gemini, Moonshot, others — your own keys let you pick.
+- **Compliance.** Some teams need usage to stay within their existing vendor relationships.
+
+If none of these apply to you, just use Eluu's bundled credits. They're metered fairly and don't require any setup.
+
+## What you can add
+
+Two kinds of keys go here.
+
+**Anthropic / Claude key.** Eluu's primary model is Claude. If you have a Claude API key, paste it. Eluu uses your key for Claude calls; the cost shows up on your Anthropic bill instead of Eluu's.
+
+You can also connect a Claude OAuth account (the same login Anthropic offers Pro users). That uses your subscription rather than usage-based billing.
+
+**Other provider keys.** OpenAI, Google Gemini, DeepSeek, Z-AI, Moonshot, xAI. Paste each in the corresponding field.
+
+## How keys are stored
+
+Every key is encrypted at rest. They're never visible after you save — if you need to update one, paste the new one and save again. There's no way to view the old one back.
+
+The encryption keys themselves rotate periodically. If you need to verify or rotate your own keys (after a security event, for example), revoke them on the provider side and paste fresh ones here.
+
+## Removing a key
+
+Each key has a remove button next to it. Removing it switches that provider back to Eluu's bundled credits. Your colleagues keep working — they just bill against Eluu instead of your account.
+
+## Setting per-user budgets
+
+If multiple people on your team use the same key, you can set a soft monthly budget per user. When a user goes over, their requests slow down (rather than fail) and you get an alert. Useful for keeping any one teammate from running away with the budget.
+
+## Where to next
+
+<CardGroup cols={2}>
+  <Card title="Billing and usage" icon="credit-card" href="/settings/billing">
+    See your plan's included credits.
+  </Card>
+  <Card title="Inviting your team" icon="user-plus" href="/settings/inviting-your-team">
+    Bring teammates in.
+  </Card>
+</CardGroup>
