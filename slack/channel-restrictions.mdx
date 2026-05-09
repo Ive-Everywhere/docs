@@ -1,0 +1,50 @@
+---
+title: Channel restrictions
+description: Control which channels a colleague can answer in. Pin them to the right channels, or block specific ones.
+icon: lock
+---
+
+By default, your colleague can answer in any channel they've been added to. That's usually too much. Channel restrictions let you say exactly where a colleague should and shouldn't respond.
+
+## Three modes
+
+Pick one per colleague:
+
+**Allow everywhere.** The colleague answers in any channel they've been invited to. Default for new connections. Good for general-purpose colleagues like `@Eluu`.
+
+**Allow list.** The colleague only answers in channels you've explicitly listed. Use this when you want a colleague pinned to specific channels — Sofia in `#sales-ops` and `#sales-leadership`, nowhere else.
+
+**Block list.** The colleague answers everywhere except channels you've explicitly listed. Use this when most channels are fine, but a few are off-limits — say, executive channels or channels with sensitive HR discussions.
+
+## Setting it up
+
+In Eluu's Slack settings, open the connection you want to restrict. There's a **Channels** section.
+
+- Pick the mode (Allow / Allow list / Block list).
+- Add channels to the list (you'll see your team's channels in the picker, public and private).
+- Save.
+
+The change takes effect immediately. Existing threads continue, but new mentions in disallowed channels are ignored.
+
+## Mapping vs allow list — what's the difference
+
+A channel **mapping** says "in this channel, the bot should respond as Sofia". An **allow list** says "Sofia is allowed to respond in these channels — and only these."
+
+For `@Eluu` (the platform bot), you set up channel mappings so the right colleague answers in each channel. The allow list adds a layer on top: even with a mapping, the bot won't respond if the channel isn't allowed.
+
+For custom Slack apps (where the colleague has their own `@name`), there's only one colleague behind the app. The allow list is the main control.
+
+## Private channels
+
+Private channels work the same as public ones — pick them in the picker, add them to the list. The colleague needs to be invited to the channel by a workspace member before it can respond there, regardless of allow-list state.
+
+## Where to next
+
+<CardGroup cols={2}>
+  <Card title="User mapping" icon="user" href="/slack/user-mapping">
+    Link Slack users to Eluu accounts.
+  </Card>
+  <Card title="Custom apps" icon="wand-sparkles" href="/slack/custom-app/creating">
+    Run colleagues under their own brand.
+  </Card>
+</CardGroup>
