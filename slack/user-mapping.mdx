@@ -1,0 +1,56 @@
+---
+title: User mapping
+description: Link your team's Slack identities to their Eluu accounts so colleagues know who they're talking to.
+icon: user
+---
+
+When someone in Slack mentions a colleague, the colleague needs to know who that is. User mapping is how you connect a Slack user (their Slack handle, profile, account) to an Eluu user (their Eluu identity, with their personal integrations and history).
+
+## Why it matters
+
+A colleague can do different things for different people. Sofia drafts a follow-up email — but it should come from your address, not a teammate's. Max checks Salesforce — but it should use your CRM access, not a colleague who's not on the deal.
+
+Without user mapping, the colleague has to guess. With it, they know.
+
+## Auto-matching by email
+
+Most user mappings happen automatically. Eluu compares the email address on each Slack user with the email address on each Eluu user. If they match, the link is made.
+
+You don't have to do anything for this to work — when you set up the Slack connection, Eluu syncs the workspace's users on its own. The user-mapping page shows you what's been linked.
+
+## Manual mapping
+
+A few people on your team might use different emails for Slack and Eluu, or sit in odd corners of your identity setup. For those:
+
+<Steps>
+  <Step title="Open user mapping">
+    In Eluu's Slack settings, click into the connection. Find the **People** section.
+  </Step>
+  <Step title="Find the unmapped Slack user">
+    Anyone not mapped shows a red dot next to their name with the label `Not mapped`.
+  </Step>
+  <Step title="Pick their Eluu account">
+    From the dropdown next to their row, pick the matching Eluu user. Save.
+  </Step>
+</Steps>
+
+## Blocking a user
+
+If someone on Slack shouldn't be allowed to use your colleague at all, you can block them.
+
+In the People section, find the user, click the kebab menu, and pick **Block**. The colleague will ignore that user's mentions from then on.
+
+## Unmapping
+
+If a mapping turns out wrong (someone left, identity changed), unmap them: same kebab menu, **Unmap**. The Slack user is now unrecognised; the colleague will respond as if to an unknown user, but won't have personal context.
+
+## Where to next
+
+<CardGroup cols={2}>
+  <Card title="Channel restrictions" icon="lock" href="/slack/channel-restrictions">
+    Pair user mapping with channel control.
+  </Card>
+  <Card title="Personal vs shared connections" icon="users" href="/integrations/team-vs-personal">
+    Why per-user identity matters for tool access.
+  </Card>
+</CardGroup>
