@@ -1,89 +1,95 @@
-# Eluu Documentation — agent instructions
+# Eluu Documentation — voice and structure
 
-## About this project
+This is product documentation for **business operators** — heads of sales, customer success, marketing, ops, founders. Not engineers. Most have never written a line of code and never will.
 
-- This is the Eluu product documentation site, built on [Mintlify](https://mintlify.com).
-- Pages are MDX files with YAML frontmatter.
-- Navigation lives in `docs.json`.
-- Run `mint dev` to preview locally.
-- Run `mint broken-links` to check links.
+## Voice rules — non-negotiable
 
-## Terminology — UI names, always
+These are mistakes the previous draft made. Don't repeat them.
 
-Eluu's code uses some different names from the product UI. **In docs, always use the product UI name.**
+**Lead with what they can do, not with UI elements.**
+- Bad: "The composer is the input area at the bottom..."
+- Good: "When you talk to a colleague, you can attach files, pick the model, and pause anytime."
 
-| Use this (UI) | Not this (code) |
+**No reference-page framing.**
+- Don't write pages titled "X reference" or "anatomy of Y".
+- Don't open with "This page covers all the controls in...".
+- Operators don't read reference. They read for outcomes.
+
+**Skip the trivia.**
+- No placeholder text, char limits, validation rules, file-extension lists, state-machine tables, keyboard-shortcut tables.
+- If it's a detail an engineer would put in a spec, leave it out.
+
+**No internal naming.**
+- Never say "the composer", "the panel-tab strip", "the wizard".
+- Use plain English: "the chat", "the side menu", "creating a colleague".
+
+**Show, don't list.**
+- Bad: tables of state names with code-formatted values.
+- Good: a sentence describing what happens.
+- A real example beats a table every time.
+
+**Concrete over abstract.**
+- Bad: "Configure the colleague's role with a clear, descriptive sentence (40-180 chars)."
+- Good: "Give them a real role — like a senior sales colleague who runs morning pipeline reviews and drafts follow-ups. The more concrete you are, the better they perform."
+
+**Short pages.**
+- 200-500 words is the target.
+- If a page is over 600 words, you're probably writing reference, not docs.
+
+## Terminology — UI names always
+
+In docs, always use what the product calls things — never the code names.
+
+| Use this | Not this |
 |---|---|
 | Colleague | Agent |
+| Session | Task |
 | Job | Reminder |
-| Session / chat | Task |
-| Team | Workspace |
-| View | (no alternate) |
-| Hard Drive | Artifact storage |
+| Hard disk | Artifact storage / Hard Drive (UI says Hard Drive — use that. Internal code says artifacts) |
+| Memory | Workspace state, accumulated context |
+| Personal / Shared | PRIVATE / TEAM |
 | Skill | (no alternate) |
-| Tools | Integrations directory |
-| Personal | PRIVATE visibility |
-| Shared | TEAM visibility |
-| Mine / Shared | The visibility filter (never "All") |
+| View | (no alternate) |
+| Integration | (no alternate) |
 
-The glossary page at `/concepts/glossary` is the single source of truth — link to it on first use of any non-obvious term.
+## Eluu-specific style
 
-## Style preferences
+- "Eluu", not "Eluu AI" in body copy. "Eluu AI" only in formal contexts.
+- Never call colleagues "AI agents" or "AI assistants" — both signal commodity. Always "colleague".
+- Use **Sofia** as the canonical example colleague (it's the platform default).
+- Show what the colleague is replacing where useful — "what a sales operations SaaS would do".
+- When showing a Slack flow, write the example mention: `@Sofia look at the last 20 emails...`.
 
-- Active voice, second person (`you`).
-- One idea per sentence. Cut filler.
-- Sentence case headings (`Create your first colleague`, not `Create Your First Colleague`).
-- **Bold** for UI elements: Click **Settings**, then choose **People**.
-- `Code formatting` for file names, slash commands, paths, and field names.
-- Don't use emojis unless the user explicitly asks.
-- Don't say "simply", "just", "easy", or "powerful" — they don't help the reader and they age badly.
-- Numbers in body copy: spell out one to nine, digits for 10+. Exceptions: limits, prices, durations.
-- For lists of three or fewer items, use prose; four or more, use a list.
+## Mintlify components — use sparingly
 
-## Eluu-specific style rules
+- `<Card>` and `<CardGroup>` — overview pages and "next" links.
+- `<Steps>` — only for actual procedures (creating something, connecting Slack).
+- `<Note>`, `<Tip>`, `<Warning>` — sparingly. One per page max.
+- `<Frame>` — around screenshots with captions.
+- Avoid `<Tabs>` unless there are real variant flows.
+- Avoid `<AccordionGroup>` except for FAQs.
 
-- **Product = Eluu, not "Eluu AI"** in body copy. Use "Eluu AI" only in formal/legal contexts.
-- When referring to the LLM provider, say "Claude" — not "the model" — unless contrasting providers.
-- Refer to the agent doing work as "your colleague" once the colleague has been introduced. First reference can be "an Eluu colleague" or "your colleague Sofia".
-- Slash commands: always render as `code`, with the leading slash. Example: `/research`.
-- Don't say "AI agent" or "AI assistant" — that's positioning we explicitly avoid (see strategy/competitive-landscape.md).
-- When showing a state machine (pause/resume, task status), use a small table not prose.
-- Show the colleague's name in toast/error copy examples — use **Sofia** as the canonical example colleague (matches the product's onboarding default).
+## Confidential — never publish
 
-## Mintlify components to prefer
+- The Daytona / sandbox runtime
+- The MCP Manager service
+- The LiteLLM proxy
+- Anything about "Claude Code" lineage (refer to the platform's own architecture only)
+- Per-colleague pricing model (still internal)
+- Workspace org URLs, internal API key shapes
 
-- `<Card>` and `<CardGroup>` for entry-point grids on overview pages.
-- `<Steps>` for procedural walkthroughs (sign up, connect an integration, etc.).
-- `<Tabs>` for variant flows (e.g. password vs Google sign-in).
-- `<Note>`, `<Tip>`, `<Warning>` sparingly — never two in a row.
-- `<Frame>` around all screenshots, with a caption.
-- `<AccordionGroup>` for FAQs only.
-- `<CodeGroup>` for showing the same call across multiple languages (rare in user docs).
+## Frontmatter
 
-## Content boundaries
+```yaml
+---
+title: <sentence-case title>
+description: <one line, max 160 chars, explains the value to a business operator>
+icon: <lucide icon name>
+---
+```
 
-- Document only shipped features. If a feature exists in the database but has no UI yet (e.g. the public Skills registry), do not document it.
-- Internal-only surfaces are out of scope: `/api/internal/*`, `/api/dev/billing/*`, the credential pool, MCP Manager, LiteLLM proxy.
-- Do not reference the source-code names of services (`task-service.ts`, `daytona-service.ts`) in user docs.
-- Don't document scoreboard targets, growth metrics, or company strategy.
-- **Confidential — never publish:** the platform sandbox infrastructure, the agent runtime architecture (Daytona/sandbox/MCP Manager), internal API key formats. The "How Eluu works under the hood" page is allowed but stays at the conceptual level.
+Don't reference internal facts in the description. Make it readable on a search results page.
 
-## When you're not sure of a fact
+## When unsure
 
-The authoritative source is `product/documentation/facts-ledger.md` in the agentic-ops chief-of-staff workspace. It has the exact copy, validation, options, and limits as shipped. If a fact isn't in the ledger, read the source file — don't invent.
-
-## Page template
-
-Every page should:
-
-1. Open with one sentence stating what the page covers and who it's for.
-2. Include a `<Note>` at the top if there's a gotcha that affects the whole page.
-3. End with a `## Next` section linking to 2-3 related pages.
-4. Have YAML frontmatter:
-   ```yaml
-   ---
-   title: <sentence-case page title>
-   description: <one-line SEO description, 50-160 chars>
-   icon: <lucide icon name>
-   ---
-   ```
+The authoritative source is `product/documentation/facts-ledger.md` for behaviour, and `strategy/positioning-and-pricing.md` for positioning. If a fact isn't there, ask Krishna. Don't invent.
