@@ -1,10 +1,10 @@
 ---
 title: Verification loops
-description: Have a colleague check its own work before delivering it to you.
+description: Have a colleague check their own work before delivering it to you.
 icon: shield-check
 ---
 
-A verification loop is the colleague checking its own work. Before it ships an output, it re-reads what it produced, compares against the source, and only delivers when its own checks pass.
+A verification loop is a colleague checking their own work. Before they ship an output, they re-read what they produced, compare it against the source, and only deliver when their own checks pass.
 
 This is the difference between a colleague that's useful in conversation and a colleague you can trust to run on a schedule without supervision.
 
@@ -16,14 +16,14 @@ A verification loop catches these before they ship.
 
 ## The pattern
 
-You're adding one extra step. After the colleague produces an output, but before it shows you (or sends it):
+You're adding one extra step. After the colleague produces an output, but before they show you (or send it):
 
 1. Re-read the output.
 2. Compare against the source data.
-3. Look for specific failure modes you've taught it.
-4. Either fix anything off, or flag what it can't fix.
+3. Look for specific failure modes you've taught them.
+4. Either fix anything off, or flag what they can't fix.
 
-The colleague does this on its own when you set it up right.
+The colleague does this on their own when you set it up right.
 
 ## Adding it to a workflow
 
@@ -52,13 +52,13 @@ Don't verify what won't fail. If the colleague has never gotten the date format 
 
 ## When verification fails
 
-If the colleague's check finds a problem it can fix, it fixes it and shows you the corrected version. You see one output.
+If the colleague's check finds a problem they can fix, they fix it and show you the corrected version. You see one output.
 
-If it finds a problem it can't fix — say the source data is missing or the requested format is impossible — it flags the issue and shows you what it has, with a note. You see what it knows it's getting wrong, instead of confidently bad output.
+If they find a problem they can't fix — say the source data is missing or the requested format is impossible — they flag the issue and show you what they have, with a note. You see what they know is wrong, instead of confidently bad output.
 
 ## Stronger verification: a second colleague
 
-For the highest-stakes outputs — outgoing emails to customers, board reports, anything you'll be on the hook for — don't let the verifier be the same colleague that produced the work. A second colleague (or a [sub-agent](/techniques/sub-agents-for-verification)) gives you an independent read.
+For the highest-stakes outputs — outgoing emails to customers, board reports, anything you'll be on the hook for — don't let the verifier be the same colleague who produced the work. A second colleague (or a [sub-agent](/techniques/sub-agents-for-verification)) gives you an independent read.
 
 ## Where to next
 
