@@ -1,0 +1,56 @@
+---
+title: Integrations
+description: Connect Eluu to the tools your team already uses. Gmail, Slack, Sheets, Salesforce, HubSpot, Linear, GitHub, and more.
+icon: plug
+---
+
+Integrations connect your colleagues to the tools you already use. Once you've connected Gmail, any colleague you've enabled it for can read your inbox, draft replies, and send them. Same with every other tool.
+
+Eluu supports the tools most teams run on:
+
+- **Email and chat:** Gmail, Slack, Discord
+- **Docs:** Google Docs, Google Drive, Google Sheets, Notion
+- **CRM and sales:** Salesforce, HubSpot
+- **Engineering:** GitHub, Linear
+- **Commerce:** Shopify (multi-store)
+- **Search and research:** Exa
+- **Analytics:** PostHog
+- **Browser:** the Eluu Chrome extension lets a colleague drive your own browser
+
+More are added regularly. If something's missing, ask in support — most tools that have an API can be wired up.
+
+## How a colleague gets to a tool
+
+Connecting a tool happens in two steps:
+
+1. **Connect the tool to your team.** Open the Tools page, click connect, sign in to the provider. The connection is saved.
+2. **Enable it on a colleague.** When you build or edit a colleague, toggle which connections they can use.
+
+The same connection can be enabled on many colleagues. Each colleague gets only the tools you've explicitly turned on for them.
+
+## Personal vs shared connections
+
+Each integration connection is either yours alone (Personal) or shared with your team. Personal is the default — when you connect Gmail, it's yours; teammates can't read your inbox through the colleague.
+
+Shared connections are useful for company-owned data: the team Slack workspace, the CRM, the shared Drive. Each user still authenticates with their own account, so a shared Gmail integration uses each user's own emails.
+
+## Trust controls
+
+Each tool a colleague can use has a permission setting:
+
+- **Auto** — runs without asking. Use for read-only stuff and things you trust.
+- **Review** — the colleague pauses and asks before each use. Use for sending email, posting to Slack, updating CRM records.
+- **Block** — the colleague doesn't see the tool at all.
+
+Default is sensible. Reading is auto, sending and writing is review. You can change it per colleague.
+
+## Where to next
+
+<CardGroup cols={2}>
+  <Card title="Connect a tool" icon="plug" href="/integrations/overview">
+    Step-by-step.
+  </Card>
+  <Card title="Personal vs shared" icon="users" href="/integrations/team-vs-personal">
+    Who sees what.
+  </Card>
+</CardGroup>
