@@ -1,0 +1,55 @@
+---
+title: Step 2 — Connect the app to a colleague
+description: Take the credentials from your new Slack app and paste them into the matching colleague in Eluu.
+icon: link
+---
+
+You've created the Slack app. Now we hand its credentials to Eluu so the right colleague handles its messages.
+
+## What you'll need
+
+- The Slack app you just created (it's listed at [api.slack.com/apps](https://api.slack.com/apps)).
+- The Eluu colleague you want this app to represent.
+
+## Step-by-step
+
+<Steps>
+  <Step title="Open the app's Basic Information page in Slack">
+    From [api.slack.com/apps](https://api.slack.com/apps), click into your new app, then **Basic Information** in the left sidebar.
+
+    You'll need a few values from this page. Keep the tab open.
+  </Step>
+  <Step title="Open Slack settings in Eluu">
+    In Eluu, click the Slack icon in the bottom-left of the sidebar. Choose **Custom Slack mention**.
+  </Step>
+  <Step title="Pick the colleague">
+    Select which colleague this Slack app represents. Sofia for `@Sofia`, Max for `@Max`, etc.
+  </Step>
+  <Step title="Paste in the four credentials">
+    Eluu asks for four fields. Get them from your Slack app's Basic Information page:
+
+    - **App ID** — at the top of the page. Looks like `A0ANNNNNNNN`.
+    - **Client ID** — under App Credentials. Looks like `NNNNNNNNNNN.NNNNNNNNNNNNN`.
+    - **Client Secret** — under App Credentials. Click **Show** to reveal it, then copy.
+    - **Signing Secret** — under App Credentials. Same drill — Show, then copy.
+
+    Optional: **Bot Display Name** — leave empty to use what's already in the app, or set it here.
+  </Step>
+  <Step title="Save">
+    Click save. Eluu now knows this Slack app maps to this colleague.
+  </Step>
+</Steps>
+
+## Why these specific fields
+
+The Client ID and Secret let Eluu kick off the OAuth flow when you install the app. The Signing Secret lets Eluu verify that incoming Slack events really came from your app (not someone spoofing it). The App ID identifies which app you're talking about.
+
+You won't need any of these again unless you rotate the secret. If you do, come back here and update the new value.
+
+## Where to next
+
+<CardGroup cols={2}>
+  <Card title="Step 3 — Install the app" icon="download" href="/slack/custom-app/installing">
+    Put the app in your Slack workspace.
+  </Card>
+</CardGroup>
