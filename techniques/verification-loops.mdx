@@ -1,0 +1,72 @@
+---
+title: Verification loops
+description: Make a colleague check its own work before showing it to you. The technique that turns one-off chats into trustworthy automation.
+icon: shield-check
+---
+
+A verification loop is the colleague checking its own work. Before it ships an output, it re-reads what it produced, compares against the source, and only delivers when its own checks pass.
+
+This is the difference between a colleague that's useful in conversation and a colleague you can trust to run on a schedule without supervision.
+
+## Why this matters more than you'd think
+
+Most AI mistakes aren't outright hallucinations. They're small slips — a name spelled three different ways, a number that's close but not right, a date that's off by one. Caught in conversation, they're nothing. Caught on a Friday afternoon report that gets sent to a customer, they're embarrassing.
+
+A verification loop catches these before they ship.
+
+## The pattern
+
+You're adding one extra step. After the colleague produces an output, but before it shows you (or sends it):
+
+1. Re-read the output.
+2. Compare against the source data.
+3. Look for specific failure modes you've taught it.
+4. Either fix anything off, or flag what it can't fix.
+
+The colleague does this on its own when you set it up right.
+
+## Adding it to a workflow
+
+The simplest version, in chat:
+
+> Sofia, draft the outbound email. Then before showing me, re-read it and check: are the customer's name and company spelled right, are the numbers in the email actually in the source CRM record, is the tone professional. Fix anything off.
+
+This sticks for the rest of the conversation. For something you do regularly, capture it in the skill or command:
+
+> Add a verification step to `/draft-followup`. Before showing me, the colleague should re-check: name spelling, number accuracy, and tone consistency.
+
+The next time you run `/draft-followup`, the verification runs automatically.
+
+## What to verify
+
+Pick checks that catch real failure modes. A few that work:
+
+- **Spelling and names.** Every named person and company should match the source.
+- **Numbers.** Every dollar amount, percentage, count, date — verify against where it came from.
+- **Internal consistency.** If the report says "we have 12 customers" in the intro and "13 customers" in the table, that's a mismatch.
+- **Tone.** Your tone preferences (formal, casual, no exclamation marks) — explicitly check.
+- **Format constraints.** Word count under X, no markdown in Slack, never use bullets where you don't want them.
+- **Required sections.** "Every weekly report must include a Risks section" — check it's there.
+
+Don't verify what won't fail. If the colleague has never gotten the date format wrong, don't add a date-format check. Save the budget for things that have actually broken.
+
+## When verification fails
+
+If the colleague's check finds a problem it can fix, it fixes it and shows you the corrected version. You see one output.
+
+If it finds a problem it can't fix — the source data is genuinely missing, the requested format is impossible — it flags it and shows you what it has, with a note. You see what it knows it's getting wrong, instead of confidently bad output.
+
+## Stronger verification: a second colleague
+
+For the highest-stakes outputs — outgoing emails to customers, board reports, anything you'll be on the hook for — the verifier shouldn't be the same colleague that produced the work. A second colleague (or a [sub-agent](/techniques/sub-agents-for-verification)) gives you an independent read.
+
+## Where to next
+
+<CardGroup cols={2}>
+  <Card title="Sub-agents for verification" icon="users" href="/techniques/sub-agents-for-verification">
+    Independent second opinions.
+  </Card>
+  <Card title="Skill creation" icon="wand-sparkles" href="/techniques/skill-creation">
+    Robustness from the start.
+  </Card>
+</CardGroup>
