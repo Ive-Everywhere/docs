@@ -1,0 +1,119 @@
+---
+title: The composer
+description: Reference for the chat input — textarea, attachments, model picker, thinking-level selector, slash commands, and send button.
+icon: square-pen
+---
+
+The composer is the input area at the bottom of every chat. It's the surface you'll spend the most time in.
+
+<Frame caption="The composer, with attachments tray, model picker, and thinking-level selector visible.">
+  {/* TODO: screenshot of composer */}
+</Frame>
+
+## Textarea
+
+- Auto-grows as you type, up to roughly 192 px tall before scrolling.
+- Placeholder reads `How can I help you today?` in a new chat, or `Reply...` in an ongoing session.
+- Pasting a very long block of text auto-attaches it as a file rather than filling the textarea — useful for log dumps, transcripts, or pasted documents.
+
+## Send button — five states
+
+The button on the right of the composer changes based on what your colleague is doing.
+
+| State | When | What it does |
+|---|---|---|
+| **Send (active)** | You've typed something, or the colleague is idle | Sends your message |
+| **Send (inactive)** | Empty textarea, colleague idle | Disabled |
+| **Pause** | Colleague is busy, textarea is empty | Pauses the colleague mid-task |
+| **Pausing** | You've pressed Pause and the system is settling | Disabled, shows a spinner |
+| **Resume** | Colleague is paused, textarea is empty | Resumes from where it stopped |
+
+If you start typing while the colleague is paused or busy, the button switches back to **Send** and your message queues. See [Pause and resume](/chat/pause-and-resume) for the full state machine.
+
+## Attach files
+
+Click the **+** icon to attach files, or drag and drop them onto the composer.
+
+| Limit | Value |
+|---|---|
+| Max file size | 50 MB |
+| Max files per message | 10 |
+| Blocked extensions | `.exe`, `.bat`, `.sh`, `.cmd`, `.com`, `.msi`, `.scr` |
+
+There's no MIME-type allowlist beyond the blocked extensions. Documents, code, spreadsheets, images, PDFs, and archives all work.
+
+<Tip>
+Pasting a very long string into the textarea auto-attaches it as a file. Useful when copying logs from a terminal or text from a PDF.
+</Tip>
+
+If a file fails to upload, it stays in the tray with an error state — you can dismiss it, but it won't block sending. Errored files are excluded from the message.
+
+## Model picker
+
+The pill above the send button shows the current model (e.g. **Claude Opus 4.7**). Click it to open a picker grouped by provider.
+
+- The list of models you see depends on your team's plan and any [BYOK keys](/integrations/byok-llm-keys) you've added.
+- Models marked with a lock icon aren't available on your current plan.
+- Your selection persists per colleague — switch colleagues and the picker remembers each one's last-used model.
+
+## Thinking level — six values
+
+If the selected model supports reasoning, a **Thinking: ...** pill appears next to the model picker. Six values:
+
+| Value | Label |
+|---|---|
+| `none` | Off |
+| `low` | Low |
+| `medium` | Medium |
+| `high` | High |
+| `xhigh` | X-High |
+| `max` | Max |
+
+Higher levels make the colleague reason longer before answering. Hard analytical questions, multi-step plans, and ambiguous data benefit from `High` or above. Quick lookups and short answers usually run faster on `Off` or `Low`.
+
+The pill hides entirely if the selected model doesn't support thinking.
+
+## Slash commands
+
+Type `/` at the start of the textarea to open the command picker.
+
+- `/research` and `/create-plan` are built-in.
+- Each colleague can define its own commands — they appear below the built-ins.
+
+Pick a command with arrow keys + Enter, or click. The command becomes a chip before the textarea, and you type the rest of your message after it. Press the chip's × or Backspace at column 0 to remove it.
+
+See [Slash commands](/chat/slash-commands) for the full reference.
+
+## Keyboard
+
+| Key | Action |
+|---|---|
+| Enter | Send (or select highlighted slash command, if the picker is open) |
+| Shift + Enter | Newline |
+| Esc | Close the slash command picker |
+| Arrow Up / Down | Move highlight in the slash picker |
+
+## Drag and drop
+
+Drag files from your desktop onto the composer to attach them. The whole pane shows a drop overlay while you drag.
+
+## Pasting
+
+Paste images and files from your clipboard the same way you'd paste text — they become attachments.
+
+## Where to next
+
+<CardGroup cols={2}>
+  <Card title="Slash commands" icon="terminal" href="/chat/slash-commands">
+    The two built-ins and how to add your own.
+  </Card>
+  <Card title="Models and thinking" icon="brain" href="/chat/models-and-thinking">
+    Pick the right model and reasoning depth for the work.
+  </Card>
+  <Card title="Pause and resume" icon="pause" href="/chat/pause-and-resume">
+    Stop a colleague mid-task and pick up later.
+  </Card>
+  <Card title="Attachments" icon="paperclip" href="/chat/attachments">
+    What file types your colleague can read, and how it uses them.
+  </Card>
+</CardGroup>
