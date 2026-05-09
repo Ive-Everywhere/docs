@@ -38,7 +38,7 @@ Integrations have visibility on the **connection**, not the integration template
 | Who can mutate it | The owner only | The owner only (admins get 403) |
 | Default on new connect | Yes (default) | No |
 
-Per-user OAuth is enforced on shared connections too — when Alice and Bob both use a "Shared Gmail" integration, each connects with their own Google account. They never see each other's emails.
+Eluu enforces per-user OAuth on shared connections too — when Alice and Bob both use a "Shared Gmail" integration, each connects with their own Google account. They never see each other's emails.
 
 ### Views
 
@@ -68,7 +68,7 @@ Going Shared → Personal does **not** delete the colleague's history. It hides 
 
 ## Switching an integration connection
 
-Switching a connection from Shared to Personal shows a pre-flight check that counts how many other people's bindings will be wiped. If non-zero, you confirm a modal before commit.
+Switching a connection from Shared to Personal runs a pre-flight check that counts how many other people's bindings will be removed. If any, you confirm in a modal before committing.
 
 Switching Personal to Shared is silent — you're widening access, not narrowing.
 
