@@ -1,0 +1,214 @@
+---
+title: Custom Slack app
+description: Run colleagues under their own @mention name with a per-colleague Slack app.
+icon: wand-sparkles
+---
+
+A custom Slack app gives one of your colleagues their own Slack identity — `@Sofia`, `@Max`, `@CSColleague`, anything you want. Now Sofia mentions Sofia, Max mentions Max. They're separate Slack apps, with separate icons, and they coexist in your workspace.
+
+This is a single setup flow with three parts. Plan for about ten minutes the first time. Subsequent colleagues are faster — you'll be doing this from muscle memory.
+
+## What you'll need
+
+- Owner or admin access to your Slack workspace (so you can create an app).
+- The colleague you want to wire up should already exist in Eluu.
+- Both the Eluu app and Slack open in nearby tabs.
+
+## Step 1 — Create the Slack app
+
+You'll create the Slack app from a manifest we provide. The manifest pre-fills almost everything — you only need to fill in three identity fields.
+
+<Steps>
+  <Step title="Open Slack's app creator">
+    Go to [api.slack.com/apps](https://api.slack.com/apps) and click **Create New App**.
+  </Step>
+  <Step title="Pick 'From a manifest'">
+    Pick **From a manifest**. This pre-fills almost everything.
+  </Step>
+  <Step title="Pick your workspace">
+    Pick the workspace where the colleague should live.
+  </Step>
+  <Step title="Paste the manifest">
+    Paste the JSON below. Switch to the JSON tab if it shows YAML.
+
+    ```json
+    {
+        "display_information": {
+            "name": "",
+            "description": "",
+            "background_color": "#545b55"
+        },
+        "features": {
+            "app_home": {
+                "home_tab_enabled": false,
+                "messages_tab_enabled": true,
+                "messages_tab_read_only_enabled": false
+            },
+            "bot_user": {
+                "display_name": "",
+                "always_online": true
+            },
+            "slash_commands": [
+                {
+                    "command": "/report",
+                    "url": "https://api.eluu.ai/api/slack/commands",
+                    "description": "Report an issue",
+                    "usage_hint": "[Thread URL]",
+                    "should_escape": false
+                }
+            ],
+            "assistant_view": {
+                "assistant_description": "AI colleague created on Eluu AI",
+                "suggested_prompts": []
+            }
+        },
+        "oauth_config": {
+            "redirect_urls": [
+                "https://api.eluu.ai/api/slack/oauth/callback"
+            ],
+            "scopes": {
+                "bot": [
+                    "app_mentions:read",
+                    "channels:history",
+                    "channels:read",
+                    "chat:write",
+                    "chat:write.customize",
+                    "chat:write.public",
+                    "files:read",
+                    "files:write",
+                    "groups:history",
+                    "groups:read",
+                    "im:history",
+                    "im:read",
+                    "im:write",
+                    "incoming-webhook",
+                    "reactions:write",
+                    "users:read",
+                    "assistant:write",
+                    "commands"
+                ]
+            },
+            "pkce_enabled": false
+        },
+        "settings": {
+            "event_subscriptions": {
+                "request_url": "https://api.eluu.ai/api/slack/events",
+                "bot_events": [
+                    "app_mention",
+                    "message.channels",
+                    "message.groups",
+                    "message.im"
+                ]
+            },
+            "interactivity": {
+                "is_enabled": true,
+                "request_url": "https://api.eluu.ai/api/slack/interactions"
+            },
+            "org_deploy_enabled": false,
+            "socket_mode_enabled": false,
+            "token_rotation_enabled": false,
+            "is_mcp_enabled": false
+        }
+    }
+    ```
+  </Step>
+  <Step title="Fill in three fields">
+    Three fields in the manifest are intentionally blank. Fill them with your colleague's identity:
+
+    - `display_information.name` — the app's display name in Slack admin. Use the colleague's name, like `Sofia` or `Acme Sales Assistant`.
+    - `display_information.description` — one line about what the colleague does. Shown when people view the app's profile in Slack.
+    - `features.bot_user.display_name` — the @mention name. This is what people will type — like `Sofia`, which becomes `@Sofia` in chat.
+
+    Everything else is pre-configured to talk to Eluu. Don't change it.
+  </Step>
+  <Step title="Click Next, then Create">
+    Slack reviews the manifest and creates the app. You'll land on the app's settings page.
+  </Step>
+</Steps>
+
+You now have a Slack app, named after your colleague, that lives at `api.slack.com/apps/<id>`. It's not installed in your workspace yet — that's the last step. First, connect it to the colleague in Eluu.
+
+## Step 2 — Connect the app to a colleague
+
+Now hand the app's credentials to Eluu so the right colleague handles its messages. Keep the Slack app's settings page open — you'll be copying values from it.
+
+<Steps>
+  <Step title="Open the app's Basic Information page in Slack">
+    From [api.slack.com/apps](https://api.slack.com/apps), click into your new app, then **Basic Information** in the left sidebar.
+
+    You'll need a few values from this page. Keep the tab open.
+  </Step>
+  <Step title="Open Slack settings in Eluu">
+    In Eluu, click the Slack icon in the bottom-left of the sidebar. Click **Custom Slack mention**.
+  </Step>
+  <Step title="Pick the colleague">
+    Pick which colleague this Slack app represents. Sofia for `@Sofia`, Max for `@Max`, etc.
+  </Step>
+  <Step title="Paste in the four credentials">
+    Eluu asks for four fields. Get them from your Slack app's Basic Information page:
+
+    - **App ID** — at the top of the page. Looks like `A0ANNNNNNNN`.
+    - **Client ID** — under App Credentials. Looks like `NNNNNNNNNNN.NNNNNNNNNNNNN`.
+    - **Client Secret** — under App Credentials. Click **Show** to reveal it, then copy.
+    - **Signing Secret** — under App Credentials. Same drill — Show, then copy.
+
+    Optional: **Bot Display Name** — leave empty to use what's already in the app, or set it here.
+  </Step>
+  <Step title="Save">
+    Click save. Eluu now knows this Slack app maps to this colleague.
+  </Step>
+</Steps>
+
+The Client ID and Secret let Eluu kick off the OAuth flow when you install the app. The Signing Secret lets Eluu verify that incoming Slack events really came from your app, not someone spoofing it. The App ID identifies which app you're talking about.
+
+You won't need any of these again unless you rotate the secret.
+
+## Step 3 — Install the app to Slack
+
+Last step. Install the app you created and connected, and your colleague is reachable in Slack.
+
+<Steps>
+  <Step title="Open Eluu's Slack settings">
+    You should still be on the Slack settings page. You'll see your custom app listed alongside `@Eluu` if you have that installed too.
+  </Step>
+  <Step title="Click Install">
+    Find the app you set up. There's an **Install** button next to it. Click it.
+  </Step>
+  <Step title="Authorise in Slack">
+    Slack opens, asks you to confirm the workspace, and shows the permissions the app is requesting. Click **Allow**.
+  </Step>
+  <Step title="You're back in Eluu">
+    The connection shows as installed. You can now map the colleague to channels, exactly the way you would with `@Eluu`.
+  </Step>
+</Steps>
+
+## Test it
+
+Go to any channel where you've mapped the colleague (or DM them directly) and mention them.
+
+> @Sofia look at the recent messages here and summarise.
+
+Sofia replies in the thread, the same as if you were chatting in the Eluu app. Her memory, her tools, her skills — all there.
+
+## Adding more colleagues
+
+Each custom Slack app represents one colleague. To run a second branded colleague — `@Max` for customer success, on top of `@Sofia` for sales — repeat all three steps with a fresh manifest, fresh credentials, and a fresh install. You can run as many as you want. They coexist in the same Slack workspace under different `@names`.
+
+## Rotating the signing secret
+
+If you ever need to rotate the signing secret in Slack (security audit, accidental leak):
+
+1. Go to the app's Basic Information page in Slack and rotate.
+2. Come back to Eluu's Slack settings, edit the connection, paste the new secret.
+3. For 24 hours after rotation, both the old and new secrets work — so you've got time.
+
+## Where to next
+
+<CardGroup cols={2}>
+  <Card title="Channel restrictions" icon="lock" href="/slack/channel-restrictions">
+    Limit where the colleague can answer.
+  </Card>
+  <Card title="User mapping" icon="user" href="/slack/user-mapping">
+    Link Slack users to their Eluu accounts.
+  </Card>
+</CardGroup>
