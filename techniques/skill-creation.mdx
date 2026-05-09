@@ -1,0 +1,88 @@
+---
+title: Skill creation
+description: How to build skills that hold up in production. Edge cases, preferences, the patterns that make a skill reliable.
+icon: wand-sparkles
+---
+
+A skill that works the first time isn't always a skill that works the hundredth time. The difference is how you handle the things that aren't in the happy path — odd inputs, missing data, your team's specific preferences, the corner cases that show up only when you've used a skill twenty times.
+
+This page is about making skills that hold up.
+
+## Start with the happy path
+
+Don't try to handle every edge case from day one. Build the skill for the typical case first. Run it a few times. See what comes out.
+
+A skill that's only one line of explanation, but works, is better than a skill that's 500 lines and is brittle. Eluu's colleagues are smart enough to fill in obvious gaps.
+
+## Then add the edge cases
+
+After three or four real runs, you'll notice the failure modes. Tell the colleague:
+
+> When the customer name has multiple words, only use the first word in the email greeting.
+
+> If there's no recent activity on a deal, don't try to summarise — say "no recent activity".
+
+> When the subject line is empty, generate one from the first sentence of the body.
+
+The colleague updates the skill. Each correction makes it sharper.
+
+## Capture preferences explicitly
+
+Skills produce more consistent output when they know your preferences. Don't make the colleague guess.
+
+> All weekly reports should be 600 words or less.
+
+> Slack messages should never use bullet points — use short numbered lists if structure is needed.
+
+> When drafting emails, the second sentence should explain what we want.
+
+> Default tone is professional but warm. No exclamation marks except in customer-success replies.
+
+These go into the skill once. The skill remembers.
+
+## Handle missing data
+
+A common failure mode: the data you expected isn't there. The CRM record is empty, the email has no subject, the customer has no past notes. Tell the colleague how to recover:
+
+> If a Salesforce field you need is empty, say so explicitly in the report rather than guessing.
+
+> If there's no customer history on file, ask before drafting outreach.
+
+> If the source data is older than 24 hours, flag it as stale.
+
+Better that the skill says "I don't know" than that it confidently fabricates.
+
+## Verify before shipping
+
+For high-stakes outputs — outbound emails, board reports, anything customer-facing — the skill should verify itself before showing you. See [verification loops](/techniques/verification-loops) for the pattern in depth.
+
+In short:
+
+> Before showing me the draft, re-read it and check: are the names spelled right, do the numbers match the source data, is the tone consistent?
+
+The colleague does its own pass. Most issues get caught.
+
+## When the skill drifts
+
+After a few months, a skill that used to work starts producing slightly off output. Usually one of three things:
+
+- **The data shape changed.** The CRM has new fields. Slack moved a setting. The skill is referencing something that's no longer where it was.
+- **Your preferences shifted.** What worked last quarter doesn't quite fit now.
+- **The skill instructions accumulated noise.** Too many corrections, slightly contradictory.
+
+Fix by simplifying. Tell the colleague:
+
+> Look at the skill, simplify the instructions, and remove anything that's no longer relevant. Keep the core behaviour.
+
+The colleague rewrites the skill. You review the new version, you accept or correct it.
+
+## Where to next
+
+<CardGroup cols={2}>
+  <Card title="Verification loops" icon="shield-check" href="/techniques/verification-loops">
+    Trust outputs without watching every run.
+  </Card>
+  <Card title="Sub-agents for verification" icon="users" href="/techniques/sub-agents-for-verification">
+    Independent second opinions.
+  </Card>
+</CardGroup>
