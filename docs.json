@@ -32,7 +32,7 @@
       {"group": "Sessions", "icon": "message-square", "expanded": true, "pages": ["sessions/starting-a-session", "sessions/document-authoring", "sessions/sub-agents", "sessions/browser-use", "sessions/using-skills"]},
       {"group": "Colleagues", "icon": "users-round", "expanded": true, "pages": ["colleagues/overview", "colleagues/skills", "colleagues/commands", "colleagues/integrations", "colleagues/memory"]},
       {"group": "Views", "icon": "layout-dashboard", "expanded": true, "pages": ["views/overview", "views/examples"]},
-      {"group": "Slack", "icon": "slack", "expanded": true, "pages": ["slack/overview", "slack/eluu-bot", {"group": "Custom app", "icon": "wand-sparkles", "pages": ["slack/custom-app/creating", "slack/custom-app/connecting", "slack/custom-app/installing"]}, "slack/channel-restrictions", "slack/user-mapping"]},
+      {"group": "Slack", "icon": "slack", "expanded": true, "pages": ["slack/overview", "slack/eluu-bot", "slack/custom-app", "slack/channel-restrictions", "slack/user-mapping"]},
       {"group": "Settings", "icon": "settings", "expanded": true, "pages": ["settings/inviting-your-team", "settings/api-keys", "settings/billing"]},
       {"group": "Integrations", "icon": "plug", "expanded": true, "pages": ["integrations/overview", "integrations/team-vs-personal"]},
       {"group": "Techniques", "icon": "wand-sparkles", "expanded": true, "pages": ["techniques/skill-creation", "techniques/verification-loops", "techniques/sub-agents-for-verification"]}
