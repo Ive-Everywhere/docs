@@ -1,0 +1,61 @@
+---
+title: Step 3 — Install the app to Slack
+description: Install your new Slack app in your workspace and start using it.
+icon: download
+---
+
+Last step. Install the app you created and connected, and your colleague is reachable in Slack.
+
+## Step-by-step
+
+<Steps>
+  <Step title="Open Eluu's Slack settings">
+    Click the Slack icon in the bottom-left of the sidebar. You'll see your custom app listed alongside `@Eluu` if you have that installed too.
+  </Step>
+  <Step title="Click Install">
+    Find the app you set up. There's an **Install** button next to it. Click it.
+  </Step>
+  <Step title="Authorise in Slack">
+    Slack opens, asks you to confirm the workspace, and shows the permissions the app is requesting. Click **Allow**.
+  </Step>
+  <Step title="You're back in Eluu">
+    The connection shows as installed. You can now map the colleague to channels, exactly the way you would with `@Eluu`.
+  </Step>
+</Steps>
+
+## Test it
+
+Go to any channel where you've mapped the colleague (or DM them directly) and mention them.
+
+> @Sofia look at the recent messages here and summarise.
+
+Sofia replies in the thread, the same as if you were chatting in the Eluu app. Her memory, her tools, her skills — all there.
+
+## Adding more colleagues
+
+Each custom Slack app represents one colleague. To run a second branded colleague — `@Max` for customer success, on top of `@Sofia` for sales — repeat all three steps:
+
+1. [Create a Slack app](/slack/custom-app/creating) for the new colleague (new manifest, new fields).
+2. [Connect](/slack/custom-app/connecting) it to that colleague in Eluu.
+3. Install it (this page).
+
+You can run as many as you want. They coexist in the same Slack workspace under different `@names`.
+
+## Rotating the signing secret
+
+If you ever need to rotate the signing secret in Slack (security audit, accidental leak), do this:
+
+1. Go to the app's Basic Information page in Slack and rotate.
+2. Come back to Eluu's Slack settings, edit the connection, paste the new secret.
+3. For 24 hours after rotation, both the old and new secrets work — so you've got time.
+
+## Where to next
+
+<CardGroup cols={2}>
+  <Card title="Channel restrictions" icon="lock" href="/slack/channel-restrictions">
+    Limit where the colleague can answer.
+  </Card>
+  <Card title="User mapping" icon="user" href="/slack/user-mapping">
+    Link Slack users to their Eluu accounts.
+  </Card>
+</CardGroup>
