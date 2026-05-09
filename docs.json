@@ -1,8 +1,8 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "almond",
-  "name": "Product Guide",
-  "description": "Step-by-step guides for every product—platform setup, analytics, and integrations in one place.",
+  "name": "Eluu Docs",
+  "description": "Build a persistent, learning AI colleague that works across your tool stack. Eluu's product documentation: getting started, concepts, chat, colleagues, integrations, and more.",
   "colors": {
     "primary": "#166E3F",
     "light": "#26BD6C",
@@ -27,40 +27,119 @@
           "href": "/"
         },
         {
-          "anchor": "Changelog",
-          "icon": "scroll-text",
-          "href": "https://www.mintlify.com/docs/changelog"
+          "anchor": "App",
+          "icon": "external-link",
+          "href": "https://app.eluu.ai"
         },
         {
           "anchor": "Help",
           "icon": "life-buoy",
-          "href": "https://www.mintlify.com/docs/contact-support"
+          "href": "mailto:hello@eluu.ai"
         }
       ]
     },
     "directory": "card",
     "groups": [
       {
-        "group": "Platform",
-        "icon": "layers",
+        "group": "Get started",
+        "icon": "rocket",
         "expanded": true,
         "pages": [
-          "platform/quickstart",
-          "platform/key-concepts",
-          "platform/configuration/settings",
-          "platform/configuration/user-management",
-          "platform/administration/roles-permissions"
+          "getting-started/what-is-eluu",
+          "getting-started/your-first-5-minutes",
+          "getting-started/sign-up-and-onboarding",
+          "getting-started/create-your-first-colleague",
+          "getting-started/connect-your-first-integration"
         ]
       },
       {
-        "group": "Analytics",
-        "icon": "chart-bar",
+        "group": "Concepts",
+        "icon": "lightbulb",
         "expanded": true,
         "pages": [
-          "analytics/quickstart",
-          "analytics/connect-data",
-          "analytics/dashboards/create-dashboard",
-          "analytics/reports/scheduled-reports"
+          "concepts/mental-model",
+          "concepts/colleagues-and-tasks",
+          "concepts/personal-vs-shared",
+          "concepts/tool-permissions",
+          "concepts/glossary"
+        ]
+      },
+      {
+        "group": "Chat",
+        "icon": "message-square",
+        "expanded": true,
+        "pages": [
+          "chat/basics",
+          "chat/composer",
+          "chat/choosing-a-colleague",
+          "chat/slash-commands",
+          "chat/attachments",
+          "chat/models-and-thinking",
+          "chat/pause-and-resume",
+          "chat/sessions"
+        ]
+      },
+      {
+        "group": "Colleagues",
+        "icon": "users-round",
+        "expanded": true,
+        "pages": [
+          "colleagues/overview",
+          {
+            "group": "Create a colleague",
+            "icon": "wand-sparkles",
+            "pages": [
+              "colleagues/wizard/identity",
+              "colleagues/wizard/personality",
+              "colleagues/wizard/abilities",
+              "colleagues/wizard/behaviour",
+              "colleagues/wizard/integration"
+            ]
+          },
+          "colleagues/editing",
+          "colleagues/sharing"
+        ]
+      },
+      {
+        "group": "Views",
+        "icon": "layout-dashboard",
+        "expanded": false,
+        "pages": [
+          "views/overview",
+          "views/component-catalog",
+          "views/inline-vs-persistent",
+          "views/actions"
+        ]
+      },
+      {
+        "group": "Jobs",
+        "icon": "calendar-clock",
+        "expanded": false,
+        "pages": [
+          "jobs/overview",
+          "jobs/creating-a-job",
+          "jobs/schedules",
+          "jobs/run-history"
+        ]
+      },
+      {
+        "group": "Hard Drive",
+        "icon": "hard-drive",
+        "expanded": false,
+        "pages": [
+          "hard-drive/overview",
+          "hard-drive/file-types",
+          "hard-drive/downloading"
+        ]
+      },
+      {
+        "group": "Skills",
+        "icon": "blocks",
+        "expanded": false,
+        "pages": [
+          "skills/overview",
+          "skills/github-import",
+          "skills/built-in-skills"
         ]
       },
       {
@@ -68,10 +147,57 @@
         "icon": "plug",
         "expanded": true,
         "pages": [
-          "integrations/quickstart",
-          "integrations/authentication",
-          "integrations/connectors/crm",
-          "integrations/webhooks/configure"
+          "integrations/overview",
+          "integrations/connect-an-integration",
+          "integrations/personal-vs-shared-connections",
+          "integrations/byok-llm-keys",
+          {
+            "group": "By integration",
+            "icon": "list",
+            "pages": [
+              "integrations/gmail",
+              "integrations/google-drive",
+              "integrations/google-sheets",
+              "integrations/google-docs",
+              "integrations/slack",
+              "integrations/salesforce",
+              "integrations/github",
+              "integrations/hubspot",
+              "integrations/notion",
+              "integrations/linear"
+            ]
+          }
+        ]
+      },
+      {
+        "group": "Slack",
+        "icon": "slack",
+        "expanded": false,
+        "pages": [
+          "slack/overview",
+          "slack/install",
+          "slack/channel-routing",
+          "slack/user-mapping"
+        ]
+      },
+      {
+        "group": "Admin",
+        "icon": "settings",
+        "expanded": false,
+        "pages": [
+          "admin/team-settings",
+          "admin/people-and-roles",
+          "admin/api-keys"
+        ]
+      },
+      {
+        "group": "Billing",
+        "icon": "credit-card",
+        "expanded": false,
+        "pages": [
+          "billing/plans",
+          "billing/credits",
+          "billing/upgrade-and-downgrade"
         ]
       }
     ]
@@ -84,14 +210,14 @@
     "links": [],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Open Eluu",
+      "href": "https://app.eluu.ai"
     }
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/yourcompany",
-      "linkedin": "https://linkedin.com/company/yourcompany"
+      "x": "https://x.com/eluuai",
+      "linkedin": "https://linkedin.com/company/eluu-ai"
     }
   }
 }
