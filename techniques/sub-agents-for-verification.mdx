@@ -1,0 +1,71 @@
+---
+title: Sub-agents for unbiased verification
+description: Have a sub-agent verify the main colleague's work without seeing how the work was done. The cleanest pattern for trustworthy outputs.
+icon: users
+---
+
+A colleague verifying its own work helps. A sub-agent verifying the main colleague's work — *without* seeing how the work was done — helps a lot more.
+
+This is the highest-leverage technique for any workflow where you can't be there to read every output. Scheduled jobs, customer-facing emails, weekly reports, anything that ships without you watching.
+
+## Why a sub-agent is better than self-checking
+
+When the same colleague that produced an output also verifies it, there's a bias problem. It's already settled on a way of looking at the work. It's likely to defend the choices it made. It misses what's wrong because it can't see past what it intended.
+
+A sub-agent doesn't have that history. It sees the output and the source data, and only that. Its job is to catch what's off.
+
+## The pattern
+
+When the colleague has finished a piece of work, it dispatches a sub-agent with two things:
+
+1. The output the colleague produced.
+2. The source data the output is based on.
+
+The sub-agent doesn't see the conversation, the colleague's reasoning, or any prior thinking. It sees only what the work claims and what the work was supposed to be based on.
+
+Then it answers a few specific questions:
+
+- Are all the facts in the output supported by the source data?
+- Are there any numbers, names, dates, or claims that don't match?
+- Is anything important missing?
+- Are there obvious problems with tone, format, or structure?
+
+It comes back with a verdict — clean, or here are the specific issues. The main colleague reads the verdict, fixes what was flagged, and the verifier doesn't run again.
+
+## Asking for it in chat
+
+> Sofia, after you've finished drafting the customer email, dispatch a sub-agent to verify it. The sub-agent should see the email and the source CRM record, nothing else. It should check: facts match source, numbers correct, tone professional. Have it report back, then fix anything it flags.
+
+For something you do regularly, build it into the skill:
+
+> Add a verification step to `/draft-followup`. After the draft is ready, dispatch a sub-agent to verify against the source CRM record. The sub-agent should be told: do not see the prior conversation. Just the draft and the record. Report back any issues.
+
+## When this matters most
+
+The pattern is overkill for casual chat. You're sitting right there. You see what the colleague produced.
+
+It's worth it for:
+
+- **Scheduled jobs.** No one's watching the 8am Monday brief. Verification is what makes it trustworthy.
+- **Outbound to customers.** Errors here are expensive. Two checks beat one.
+- **Reports going to leadership.** Same idea — the cost of one wrong number is higher than the cost of running verification.
+- **Things you'll be on the hook for.** If your name is on it, run verification.
+
+## When to skip it
+
+A few cases where verification adds noise without adding value:
+
+- The work is exploratory. You're just thinking out loud with the colleague.
+- The output is going to be human-reviewed by someone else anyway.
+- The colleague is doing pure pass-through — moving data without transforming it.
+
+## Where to next
+
+<CardGroup cols={2}>
+  <Card title="Verification loops" icon="shield-check" href="/techniques/verification-loops">
+    The simpler self-check pattern.
+  </Card>
+  <Card title="Sub-agents in sessions" icon="message-square" href="/sessions/sub-agents">
+    Other uses for sub-agents.
+  </Card>
+</CardGroup>
