@@ -4,19 +4,19 @@ description: Dispatch a sub-agent to verify a colleague's output against the sou
 icon: users
 ---
 
-A colleague verifying its own work helps. A sub-agent verifying the main colleague's work — *without* seeing how the work was done — helps a lot more.
+A colleague verifying their own work helps. A sub-agent verifying the main colleague's work — *without* seeing how the work was done — helps a lot more.
 
 This is the highest-leverage technique for any workflow where you can't be there to read every output. Scheduled jobs, customer-facing emails, weekly reports, anything that ships without you watching.
 
 ## Why a sub-agent is better than self-checking
 
-When the same colleague that produced an output also verifies it, there's a bias problem. It's already settled on a way of looking at the work. It's likely to defend the choices it made. It misses what's wrong because it can't see past what it intended.
+When the same colleague that produced an output also verifies it, there's a bias problem. They've already settled on a way of looking at the work. They're likely to defend the choices they made. They miss what's wrong because they can't see past what they intended.
 
 A sub-agent doesn't have that history. It sees the output and the source data, and only that. Its job is to catch what's off.
 
 ## The pattern
 
-When the colleague has finished a piece of work, it dispatches a sub-agent with two things:
+When the colleague has finished a piece of work, they dispatch a sub-agent with two things:
 
 1. The output the colleague produced.
 2. The source data the output is based on.
