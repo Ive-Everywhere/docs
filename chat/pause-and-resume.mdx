@@ -1,0 +1,99 @@
+---
+title: Pause and resume
+description: Stop a colleague mid-task and pick up later. The send button on the composer doubles as Pause and Resume.
+icon: pause
+---
+
+When a colleague is busy, the send button on the composer becomes a **Pause** button. Click it to stop the colleague mid-task. Click again later to **Resume** from where it stopped.
+
+## When you can pause
+
+| Colleague state | Can pause? |
+|---|---|
+| Busy (working on a tool call or generating) | Yes |
+| Awaiting input (asked you a question) | Composer is hidden — no pause button shown |
+| Idle | No (and there's nothing to pause) |
+| Stalled or failed | No (use Resume instead) |
+
+## When you can resume
+
+| Colleague state | Can resume? |
+|---|---|
+| Paused | Yes |
+| Idle | Yes (continues the prior session) |
+| Stalled | Yes |
+| Failed | Yes |
+| Busy | No (already running) |
+
+## How pausing works
+
+<Steps>
+  <Step title="Click Pause">
+    The send button shows a pause icon when the colleague is busy and your textarea is empty.
+  </Step>
+  <Step title="Wait a moment">
+    The system signals the colleague to stop. This usually settles in 1-5 seconds. The button shows a spinner during the wait.
+  </Step>
+  <Step title="See the toast">
+    A toast confirms `Sofia paused.` (using your colleague's name).
+  </Step>
+  <Step title="Pick up later">
+    Open the same chat any time. The button now shows a green **Resume** icon. Click it to continue.
+  </Step>
+</Steps>
+
+## How resuming works
+
+Resume is synchronous — click the button and the colleague continues immediately.
+
+Eluu uses a hybrid resume strategy:
+
+- If the underlying session file still exists (typical for short pauses), resume is fast (1-3 seconds) and picks up exactly where the colleague stopped.
+- If too much time has passed, Eluu reconstructs the colleague's context from the conversation history. The colleague keeps going but may briefly re-orient.
+
+Either way, the chat history doesn't change — you don't see a divider or a "resumed" marker.
+
+## Sending a message instead of pausing
+
+If you start typing while the colleague is busy or paused, the button changes back to **Send**. Your message queues:
+
+- **Busy**: the message is sent to the colleague when its current step finishes.
+- **Paused**: sending automatically resumes the colleague and delivers the message.
+
+This is the easiest way to "pause and redirect" — type your new instruction and hit Enter.
+
+## What happens after a refresh
+
+`Paused` is a frontend-only state. If you reload the page or close the tab, the colleague's status reverts to `Idle`. The Resume button disappears, but you can pick up the conversation by sending a new message — Eluu auto-resumes behind the scenes.
+
+This means: don't rely on the **Resume** button surviving a reload. If you want to come back later, send a message, not a click.
+
+## Toasts you'll see
+
+| Action | Toast |
+|---|---|
+| Pause kick-off | `Pausing Sofia...` |
+| Pause confirmed | `Sofia paused.` |
+| Pause too late (already idle) | `Cannot pause -- Sofia is not currently running.` |
+| Pause busy | `Sofia is busy with another operation. Try again in a moment.` |
+| Pause failed | `Failed to pause Sofia. She may still be processing.` |
+| Resume confirmed | `Sofia resumed.` |
+| Resume too late (already running) | `Cannot resume -- Sofia is already running.` |
+| Resume failed | `Failed to resume Sofia. Please try again.` |
+
+(Replace `Sofia` with your colleague's actual name.)
+
+## Pause and resume in Slack
+
+Slack pause and resume isn't available in the current release. If you start a long task from Slack, use the web app to pause it.
+
+## Where to next
+
+<CardGroup cols={2}>
+  <Card title="The composer" icon="square-pen" href="/chat/composer">
+    The five send-button states in detail.
+  </Card>
+  <Card title="Sessions" icon="message-square" href="/chat/sessions">
+    Coming back to a paused or stalled session later.
+  </Card>
+</CardGroup>
