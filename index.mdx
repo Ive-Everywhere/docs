@@ -1,58 +1,54 @@
 ---
 title: Eluu docs
-description: Build a persistent, learning AI colleague that works across your tool stack. Set up, configure, and get value from Eluu in minutes.
+description: Build AI colleagues that run business operations across every tool you use.
 mode: frame
 ---
 
 <div className="flex w-full flex-col gap-8 max-w-5xl mx-auto px-4 md:px-8 lg:px-12 py-10 lg:gap-14 lg:py-16">
   <div className="flex max-w-[640px] flex-col gap-2 self-center text-center">
     <h1 className="text-[30px] font-medium leading-9 tracking-tight text-gray-900 dark:text-gray-50">
-      Eluu docs
+      Run your business with AI colleagues
     </h1>
     <p className="text-balance text-base leading-relaxed tracking-tight text-gray-600 dark:text-gray-400">
-      Build a persistent, learning AI colleague that works across your tool stack. Not a chatbot — a stateful teammate that remembers, executes, and gets better with every task.
+      Each colleague owns a business function — sales, customer success, meeting notes, research — and works across every tool you've connected. One platform replaces a stack of AI SaaS subscriptions.
     </p>
   </div>
 
   <CardGroup cols={2}>
-    <Card title="What is Eluu?" icon="sparkles" href="/getting-started/what-is-eluu">
-      The product in one page. What you can build, who it's for, and what makes it different.
+    <Card title="Start with the concepts" icon="lightbulb" href="/concepts/colleagues">
+      Colleagues, sessions, hard disk, jobs, views, integrations. Read this first.
     </Card>
-    <Card title="Your first 5 minutes" icon="rocket" href="/getting-started/your-first-5-minutes">
-      Sign up, create a colleague, connect a tool, send your first message.
+    <Card title="Talk to a colleague" icon="message-square" href="/sessions/starting-a-session">
+      How to chat, attach files, ask for documents, pause anytime.
     </Card>
-    <Card title="Create a colleague" icon="wand-sparkles" href="/getting-started/create-your-first-colleague">
-      Walk through the five-step wizard: identity, personality, abilities, behaviour, integrations.
+    <Card title="Build a colleague" icon="users-round" href="/colleagues/overview">
+      Give them a role, plug in tools, teach them skills, build memory.
     </Card>
-    <Card title="Connect an integration" icon="plug" href="/getting-started/connect-your-first-integration">
-      Link Gmail, Slack, Sheets, or any of the integrations Eluu supports.
+    <Card title="Bring Eluu into Slack" icon="slack" href="/slack/overview">
+      Mention `@Eluu` in any channel, or run a colleague under your own brand.
     </Card>
   </CardGroup>
 
   <hr className="border-0 border-t border-border" />
 
-  <div className="flex flex-col gap-4">
-    <h2 className="font-serif text-xl font-medium leading-normal text-gray-900 dark:text-gray-50">Common tasks</h2>
-
-    <CardGroup cols={3}>
-      <Card title="Chat with a colleague" icon="message-square" href="/chat/basics">
-        Send messages, attach files, run slash commands.
-      </Card>
-      <Card title="Schedule a job" icon="calendar-clock" href="/jobs/creating-a-job">
-        Run a colleague on a recurring schedule.
-      </Card>
-      <Card title="Build a view" icon="layout-dashboard" href="/views/overview">
-        Live dashboards your colleagues update automatically.
-      </Card>
-      <Card title="Use Eluu in Slack" icon="slack" href="/slack/overview">
-        Mention a colleague in any channel.
-      </Card>
-      <Card title="Invite teammates" icon="users-round" href="/admin/people-and-roles">
-        Roles, permissions, and invitations.
-      </Card>
-      <Card title="Manage billing" icon="credit-card" href="/billing/plans">
-        Plans, credits, upgrades, and BYOK keys.
-      </Card>
-    </CardGroup>
-  </div>
+  <CardGroup cols={3}>
+    <Card title="Schedule a job" icon="calendar-clock" href="/concepts/jobs">
+      Recurring work that runs without you.
+    </Card>
+    <Card title="Build a dashboard" icon="layout-dashboard" href="/views/overview">
+      Live views your colleagues update.
+    </Card>
+    <Card title="Connect a tool" icon="plug" href="/integrations/overview">
+      Gmail, Slack, Sheets, Salesforce, and more.
+    </Card>
+    <Card title="Invite your team" icon="user-plus" href="/settings/inviting-your-team">
+      Roles, billing, API keys.
+    </Card>
+    <Card title="Use techniques that scale" icon="wand-sparkles" href="/techniques/skill-creation">
+      Skills, verification loops, sub-agents.
+    </Card>
+    <Card title="Open Eluu" icon="external-link" href="https://app.eluu.ai">
+      Jump straight to the app.
+    </Card>
+  </CardGroup>
 </div>
