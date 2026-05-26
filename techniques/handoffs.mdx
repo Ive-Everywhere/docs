@@ -1,0 +1,64 @@
+---
+title: Handoffs
+description: Keep one long session running across many large tasks without losing context.
+icon: arrow-right-left
+---
+
+Most sessions stay short. You ask, the colleague does the work, you're done. But some jobs are big — a multi-step research project, a long report, a plan with many moving parts. After a few hours of back-and-forth, the colleague has so much to remember that earlier details start to blur.
+
+The fix is a simple rhythm: write a handoff, run `/compact`, keep going. Same session the whole way through.
+
+## The pattern
+
+1. Finish a large chunk of work.
+2. Ask the colleague to create a handoff document — a short note that captures where you are, what's done, and what's next.
+3. Run `/compact`. The session keeps going, but the older back-and-forth is summarised so there's room to think.
+4. Tell the colleague to continue from the handoff.
+
+The handoff lives on the [hard disk](/concepts/hard-disk), so it survives the compact and you can read it yourself.
+
+## When to use it
+
+For anything that has more than three or four large sub-tasks. A good flow:
+
+- Start with a plan document. List the sub-tasks.
+- Work through one sub-task at a time.
+- After each one, write a handoff and run `/compact`.
+- Pick up the next sub-task from the handoff.
+
+That keeps the colleague sharp from the first sub-task to the last.
+
+## What to put in a handoff
+
+Tell the colleague what you want captured. A useful handoff usually has:
+
+- The overall goal.
+- What's complete.
+- What's next.
+- Any decisions or preferences that came up along the way.
+
+> Create a handoff document. Include the goal, what's done, what's left, and any decisions we made. Save it to the hard disk.
+
+Then, after `/compact`:
+
+> Read the handoff and continue from where we left off.
+
+## Handoff vs new session
+
+Both give you a clean working space, but they're different:
+
+- **Handoff with `/compact`** — same session, same files, same history (summarised). Best for staying on one big job.
+- **New session** — a fresh start with no prior context. Best when you're moving to unrelated work.
+
+For long-running work, stay in one session and use handoffs.
+
+## Where to next
+
+<CardGroup cols={2}>
+  <Card title="Sessions" icon="message-square" href="/concepts/sessions">
+    How sessions work, sync, and pause.
+  </Card>
+  <Card title="Skill creation" icon="wand-sparkles" href="/techniques/skill-creation">
+    Build skills that hold up in production.
+  </Card>
+</CardGroup>
