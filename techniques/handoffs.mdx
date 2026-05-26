@@ -1,0 +1,78 @@
+---
+title: Handoffs
+description: Keep one long session running across many large tasks without losing context.
+icon: arrow-right-left
+---
+
+Most sessions stay short. You ask, the colleague does the work, you're done. But some jobs are big — a multi-step research project, a long report, a plan with many moving parts. After a few hours of back-and-forth, the colleague has so much to remember that earlier details start to blur.
+
+The fix is a simple rhythm: write a handoff, run `/compact`, keep going. Same session the whole way through.
+
+## The pattern
+
+1. Finish a large chunk of work.
+2. Ask the colleague to create a handoff document — a short note that captures where you are, what's done, and what's next.
+3. Run `/compact`. The session keeps going, but the older back-and-forth is summarised so there's room to think.
+4. Tell the colleague to continue from the handoff.
+
+The handoff lives on the [hard disk](/concepts/hard-disk), so it survives the compact and you can read it yourself.
+
+## When to use it
+
+For anything that has more than three or four large sub-tasks. A good flow:
+
+- Start with a plan document. List the sub-tasks.
+- Work through one sub-task at a time.
+- After each one, write a handoff and run `/compact`.
+- Pick up the next sub-task from the handoff.
+
+That keeps the colleague sharp from the first sub-task to the last.
+
+## What to put in a handoff
+
+Tell the colleague what you want captured. A useful handoff usually has:
+
+- The overall goal.
+- What's complete.
+- What's next.
+- Any decisions or preferences that came up along the way.
+
+> Create a handoff document. Include the goal, what's done, what's left, and any decisions we made. Save it to the hard disk.
+
+Then, after `/compact`:
+
+> Read the handoff and continue from where we left off.
+
+## Skills you can add to make this easy
+
+You don't have to type those instructions every time. Two ready-made [skills](/colleagues/skills) live in the open [eluu-skills](https://github.com/Ive-Everywhere/eluu-skills) repo and turn the rhythm into one-word slash commands.
+
+> **`/create-handoff`** — [eluu-skills/create-handoff](https://github.com/Ive-Everywhere/eluu-skills/tree/main/create-handoff). Writes a structured handoff document to the hard disk: goal, plan status, what's done, what's next, decisions, open questions. Run before `/compact`.
+
+> **`/resume-handoff`** — [eluu-skills/resume-handoff](https://github.com/Ive-Everywhere/eluu-skills/tree/main/resume-handoff). Reads the most recent handoff, summarises where you are in four lines, and waits for your confirmation before continuing.
+
+Add them by asking your colleague directly:
+
+> Add the `create-handoff` and `resume-handoff` skills from `https://github.com/Ive-Everywhere/eluu-skills` to yourself.
+
+The full rhythm then becomes: `/create-plan` (built in) → work a sub-task → `/create-handoff` → `/compact` → `/resume-handoff` → next sub-task. Repeat to the end.
+
+## Handoff vs new session
+
+Both give you a clean working space, but they're different:
+
+- **Handoff with `/compact`** — same session, same files, same history (summarised). Best for staying on one big job.
+- **New session** — a fresh start with no prior context. Best when you're moving to unrelated work.
+
+For long-running work, stay in one session and use handoffs.
+
+## Where to next
+
+<CardGroup cols={2}>
+  <Card title="Skills" icon="blocks" href="/colleagues/skills">
+    How to add skills to a colleague.
+  </Card>
+  <Card title="Commands" icon="terminal" href="/colleagues/commands">
+    Slash shortcuts for your most common asks.
+  </Card>
+</CardGroup>

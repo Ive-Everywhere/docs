@@ -35,7 +35,7 @@
       {"group": "Slack", "icon": "slack", "expanded": true, "pages": ["slack/overview", "slack/eluu-bot", "slack/custom-app", "slack/channel-restrictions", "slack/user-mapping"]},
       {"group": "Settings", "icon": "settings", "expanded": true, "pages": ["settings/inviting-your-team", "settings/api-keys", "settings/billing"]},
       {"group": "Integrations", "icon": "plug", "expanded": true, "pages": ["integrations/overview", "integrations/team-vs-personal"]},
-      {"group": "Techniques", "icon": "wand-sparkles", "expanded": true, "pages": ["techniques/skill-creation", "techniques/verification-loops", "techniques/sub-agents-for-verification"]}
+      {"group": "Techniques", "icon": "wand-sparkles", "expanded": true, "pages": ["techniques/skill-creation", "techniques/verification-loops", "techniques/sub-agents-for-verification", "techniques/handoffs"]}
     ]
   },
   "logo": {"light": "/images/logo-light.svg", "dark": "/images/logo-dark.svg"},
