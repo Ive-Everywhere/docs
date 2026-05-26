@@ -43,6 +43,20 @@ Then, after `/compact`:
 
 > Read the handoff and continue from where we left off.
 
+## Make it a one-liner
+
+You can type those instructions every time, or turn them into [commands](/colleagues/commands) so each step is a single slash.
+
+The built-in `/create-plan` is a good way to start a long job — the colleague produces the plan document before doing any work. From there, two custom commands cover the rest of the loop:
+
+> **`/handoff`** — Write a handoff document to the hard disk. Include the goal, what's complete, what's left, and any decisions or preferences from this session. Tell me the filename.
+
+> **`/resume`** — Read the most recent handoff document from the hard disk. Tell me the goal, where we left off, and what's next. Wait for me to confirm before continuing.
+
+The full rhythm becomes: `/create-plan` → work a sub-task → `/handoff` → `/compact` → `/resume` → next sub-task. Repeat to the end.
+
+For teams that do this kind of work often, package the whole loop as a [skill](/colleagues/skills) — one that writes the plan, executes a sub-task, writes a handoff at the end, and resumes from the latest one when called again. Once attached, the colleague runs the rhythm without you prompting each step.
+
 ## Handoff vs new session
 
 Both give you a clean working space, but they're different:
@@ -55,10 +69,10 @@ For long-running work, stay in one session and use handoffs.
 ## Where to next
 
 <CardGroup cols={2}>
-  <Card title="Sessions" icon="message-square" href="/concepts/sessions">
-    How sessions work, sync, and pause.
+  <Card title="Commands" icon="terminal" href="/colleagues/commands">
+    Turn the handoff rhythm into slash shortcuts.
   </Card>
   <Card title="Skill creation" icon="wand-sparkles" href="/techniques/skill-creation">
-    Build skills that hold up in production.
+    Package the full loop as a skill.
   </Card>
 </CardGroup>
