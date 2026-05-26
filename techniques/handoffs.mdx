@@ -43,19 +43,19 @@ Then, after `/compact`:
 
 > Read the handoff and continue from where we left off.
 
-## Make it a one-liner
+## Skills you can add to make this easy
 
-You can type those instructions every time, or turn them into [commands](/colleagues/commands) so each step is a single slash.
+You don't have to type those instructions every time. Two ready-made [skills](/colleagues/skills) live in the open [eluu-skills](https://github.com/Ive-Everywhere/eluu-skills) repo and turn the rhythm into one-word slash commands.
 
-The built-in `/create-plan` is a good way to start a long job — the colleague produces the plan document before doing any work. From there, two custom commands cover the rest of the loop:
+> **`/create-handoff`** — [eluu-skills/create-handoff](https://github.com/Ive-Everywhere/eluu-skills/tree/main/create-handoff). Writes a structured handoff document to the hard disk: goal, plan status, what's done, what's next, decisions, open questions. Run before `/compact`.
 
-> **`/handoff`** — Write a handoff document to the hard disk. Include the goal, what's complete, what's left, and any decisions or preferences from this session. Tell me the filename.
+> **`/resume-handoff`** — [eluu-skills/resume-handoff](https://github.com/Ive-Everywhere/eluu-skills/tree/main/resume-handoff). Reads the most recent handoff, summarises where you are in four lines, and waits for your confirmation before continuing.
 
-> **`/resume`** — Read the most recent handoff document from the hard disk. Tell me the goal, where we left off, and what's next. Wait for me to confirm before continuing.
+Add them by asking your colleague directly:
 
-The full rhythm becomes: `/create-plan` → work a sub-task → `/handoff` → `/compact` → `/resume` → next sub-task. Repeat to the end.
+> Add the `create-handoff` and `resume-handoff` skills from `https://github.com/Ive-Everywhere/eluu-skills` to yourself.
 
-For teams that do this kind of work often, package the whole loop as a [skill](/colleagues/skills) — one that writes the plan, executes a sub-task, writes a handoff at the end, and resumes from the latest one when called again. Once attached, the colleague runs the rhythm without you prompting each step.
+The full rhythm then becomes: `/create-plan` (built in) → work a sub-task → `/create-handoff` → `/compact` → `/resume-handoff` → next sub-task. Repeat to the end.
 
 ## Handoff vs new session
 
@@ -69,10 +69,10 @@ For long-running work, stay in one session and use handoffs.
 ## Where to next
 
 <CardGroup cols={2}>
-  <Card title="Commands" icon="terminal" href="/colleagues/commands">
-    Turn the handoff rhythm into slash shortcuts.
+  <Card title="Skills" icon="blocks" href="/colleagues/skills">
+    How to add skills to a colleague.
   </Card>
-  <Card title="Skill creation" icon="wand-sparkles" href="/techniques/skill-creation">
-    Package the full loop as a skill.
+  <Card title="Commands" icon="terminal" href="/colleagues/commands">
+    Slash shortcuts for your most common asks.
   </Card>
 </CardGroup>
